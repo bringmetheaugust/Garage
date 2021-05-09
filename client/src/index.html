@@ -12,7 +12,7 @@
 <body>
     <div>еба..</div>
     <header class="header">
-        <img class="log" src="./assets//images/logo.png" alt="">
+        <img class="logo" src="./assets//images/logo.png" alt="">
         <div class="phone">
             <span class="phone__text">Для записи звоните по номеру</span>
             <span class="phone__number">+380636027513</span>
@@ -22,8 +22,8 @@
             <span class="address__content">г. Киев, Дарницкий район, ул.<br>Полеская 7, ГБК Захисник</span>
         </div>
         <nav class="navigation">
-            <a href="http://google.com">Услуги</a>
-            <a href="http://google.com">Цены</a>
+            <a class="navigation__item" href="http://google.com">Услуги</a>
+            <a class="navigation__item" href="http://google.com">Цены</a>
         </nav>
     </header>
     <!-- ------------------------------------------------------------------------------------------- -->
@@ -31,8 +31,8 @@
         <!-- --------------------------------------  banner  --------------------------------------- -->
         <section class="banner">
             <div>
-            <h1 class="banner__header">Автосервис <span>garage</span></h1>
-            <p class="banner__text">Качественный ремонт по выгодным ценам</p>
+            <h1 class="section-header banner__header">Автосервис <span>garage</span></h1>
+            <p class="section-text banner__text">Качественный ремонт по выгодным ценам</p>
             <button class="main-btn banner__btn">Получить консультацию</button>
         </div>
         <div>
@@ -41,7 +41,7 @@
         </section>
         <!-- -------------------------------------- services  --------------------------------------- -->
         <section class="services">
-            <h1 class="services__title">Услуги автосервиса</h1>
+            <h1 class="section-header services__title">Услуги автосервиса</h1>
             <div class="services__container">
                 <article class="services__item">
                     <img class="services__image" src="./assets/images/ysilennoe-sceplenue.jpg" alt="Комплексная диагностика автомобилей">
@@ -115,8 +115,68 @@
                         <span class="feedback__owner">Андрей Александров<span class="feedback__model">Audi A7</span></span>
                     </article>
                 </div>
+                <div class="feedback__main">
+                    <h4 class="feedback__main-header">Вы можете оставить свой отзыв</h4>
+                    <button class="red-btn feedback__btn">Оставиьть отзыв</button>
+                </div>
             </div>
         </section>
+
+          <!-- -------------------------------------- guarantees  --------------------------------------- -->
+
+        <section class="guarantees">
+            <h1 class="section-header guarantees__header">Индивидуальный подход к каждому клиенту</h1>
+            <p class="section-text guarantees__subheader">
+                Делаем ремонт как для себя и <span class="text-red">несем ответсвеность за каждый автомобиль</span>
+            </p>
+            <div class="guarantees__content">
+                <article class="guarantees__item guarantees__left">
+                    <img class="guarantees__image" src="./assets/images/ysilennoe-sceplenue.jpg" alt="Комплексная диагностика автомобилей">
+                    <h6 class="guarantees__item-header">Вы оставляете заявку на сайте</h6>
+                    <p class="guarantees__item-text">Менеджер свяжетса с Вами</p>
+                    <button class="guarantees__item-btn">Оставить заявку</button>
+                </article>
+                <div class="guarantees__center-container">
+                    <p class="guarantees__center-text">
+                       Даем <span class="text-red">100% гарантию</span>на нашу работу и запчасти 
+                    </p>
+                    <div  class="guarantees__center-wrapper">
+                        <article class="guarantees__item">
+                            <img class="guarantees__image" src="./assets/images/ysilennoe-sceplenue.jpg" alt="Комплексная диагностика автомобилей">
+                            <h6 class="guarantees__item-header">Вы оставляете заявку на сайте</h6>
+                            <p class="guarantees__item-text">Менеджер свяжетса с Вами</p>
+                        </article>
+                        <article class="guarantees__item">
+                            <img class="guarantees__image" src="./assets/images/ysilennoe-sceplenue.jpg" alt="Комплексная диагностика автомобилей">
+                            <h6 class="guarantees__item-header">Вы оставляете заявку на сайте</h6>
+                            <p class="guarantees__item-text">Менеджер свяжетса с Вами</p>
+                        </article>
+                    </div>
+                </div>
+                <article class="guarantees__item guarantees__right">
+                    <img class="guarantees__image" src="./assets/images/ysilennoe-sceplenue.jpg" alt="Комплексная диагностика автомобилей">
+                    <h6 class="guarantees__item-header">Вы оставляете заявку на сайте</h6>
+                    <p class="guarantees__item-text">Менеджер свяжетса с Вами</p>
+                </article>
+            </div>
+        </section>
+
+          <!-- -------------------------------------- consultations  --------------------------------------- -->
+
+          <section class="consultations">
+              <h1 class="section-header consultations__header">Остались вопросы?</h1>
+              <p class="section-text consultations__text">Оставь свои данные и получи <span class="text-red">бесплатную консультацию</span></p>
+              <form class="consultations__form" action="">
+                  <div class="consultations__form-main">
+                    <span class="consultations__label">Ваше имя</span>
+                    <input class="consultations__field" type="name">
+                    <span class="consultations__label">Ваш телефон</span>
+                    <input class="consultations__field" type="phone">
+                  </div>
+                  <img src="./assets/images/ysilennoe-sceplenue.jpg" alt="" class="consultations__image">
+              </form>
+              <button class="main-btn consultations__btn">Получить консультацию</button>
+          </section>
     </main>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="text/javascript" src="slick.min.js"></script>
