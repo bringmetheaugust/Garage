@@ -1,7 +1,7 @@
 {
   "name": "garage",
   "version": "1.0.0",
-  "description": "STO web site",
+  "description": "client side for @Garage project",
   "main": "./src/index.js",
   "repository": "git@github.com:FedorenkaAvenue/Garage.git",
   "author": "August Luzanovsky & Viktor Loik",
