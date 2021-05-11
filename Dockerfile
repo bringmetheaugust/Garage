@@ -1,1 +1,5 @@
 FROM node:14.15.3-alpine3.10
+
+ENV APP_PORT=81
+
+EXPOSE 80
