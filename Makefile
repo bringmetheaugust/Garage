@@ -7,11 +7,7 @@ build:
 
 run:
 	@echo "Start running container..."
-	@docker run --name ${CONTAINER} -p 587:25 -d ${IMAGE}
-
-rebuild:
-	@echo "Rebuilding..."
-	@docker stop ${CONTAINER}
-	@docker rm ${CONTAINER} -v
-	$(MAKE) build
-	$(MAKE) run
+	@docker run --name ${CONTAINER} \
+		# -v $(shell pwd)/docs:/usr/share/nginx/html/docs
+		-p 80:80 \
+		-d ${IMAGE}
