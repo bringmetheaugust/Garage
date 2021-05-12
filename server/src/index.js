@@ -1,10 +1,13 @@
 import express, { json, urlencoded } from 'express';
+import cookieParser from 'cookie-parser';
 
 import callmeController from './controllers/callme.js';
+import checkSpamMiddleware from './middleWare/checkSpam.js';
 
 const app = express();
 
 app.
+    use(cookieParser()).
     use(json()).
     use(urlencoded()).
     use((req, res, next) => {
@@ -15,7 +18,7 @@ app.
         next();
     });
 
-app.post('/callme', callmeController);
+app.post('/callme', checkSpamMiddleware, callmeController);
 
 try {
     app.listen(process.env.APP_PORT || 2101);
