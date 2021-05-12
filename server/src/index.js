@@ -18,7 +18,7 @@ app.
         next();
     });
 
-app.post('/callme', checkSpamMiddleware, callmeController);
+app.post('/api/callme', checkSpamMiddleware, callmeController);
 
 try {
     app.listen(process.env.APP_PORT || 2101);

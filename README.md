@@ -24,7 +24,7 @@ Web site about STO for cool guys.
 
  * [Client side](./client).    
  * [Server side](./server).    
- * [Server REST Api docs](https://docs.fedorenka.online/?urls.primaryName=Beria).    
+ * [Server REST Api docs](https://docs.fedorenka.online/?urls.primaryName=Garage).    
  * <details>
     <summary><i>Telegram</i> bot</summary>
     <div>
