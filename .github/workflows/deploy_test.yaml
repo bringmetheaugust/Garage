@@ -1,0 +1,31 @@
+name: Deploy remote test project
+
+on:
+  push:
+    branches: [test]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fetch test branch
+        uses: appleboy/ssh-action@v0.1.2
+        with:
+          host: ${{ secrets.TEST_SERVER_HOST }}
+          username: root
+          password: ${{ secrets.TEST_SERVER_SSH_KEY }}
+          script: |
+            cd /Garage
+            git reset --hard HEAD
+            git pull origin test
+      - name: Rebuild && up containers
+        uses: appleboy/ssh-action@v0.1.2
+        with:
+          host: ${{ secrets.TEST_SERVER_HOST }}
+          username: root
+          password: ${{ secrets.TEST_SERVER_SSH_KEY }}
+          script: |
+            cd /Garage
+            make stop
+            make build_prod
+            make run_prod

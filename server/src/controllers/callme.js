@@ -17,7 +17,7 @@ export default async function({ body }, res) {
 
             if (status !== 200) throw Error;
         
-            res.cookie('call_request', true, { maxAge: 1000 * 60 * 2, httpOnly: false }); //TODO поменять время кук на стабильное число
+            res.cookie('call_request', true, { maxAge: 1000 * 60 * 10, httpOnly: false }); //TODO поменять время кук на стабильное число
             res.sendStatus(200);
         } catch(err) {
             res.sendStatus(500);

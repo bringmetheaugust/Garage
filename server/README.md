@@ -18,3 +18,6 @@ Server side for *@Garage* project.
 
   * **local port**: `2101`
   * **Docker port**: `81`
+
+## Docs
+[REST Api docs](https://docs.fedorenka.online/?urls.primaryName=Garage).    
