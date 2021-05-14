@@ -4,12 +4,15 @@ CONTAINER=garage
 # dev
 build_dev:
 	@echo "Building container..."
-	@docker build -t ${IMAGE} ./Dockerfile
+	@docker build -t ${IMAGE} .
 
 run_dev:
 	@echo "Start running container..."
 	@docker run --name ${CONTAINER} \
-		# -v $(shell pwd)/docs:/usr/share/nginx/html/docs
+		-v $(shell pwd)/nginx/garage_dev.conf:/etc/nginx/conf.d/garage.conf \
+		-v $(shell pwd)/nginx/nginx.conf:/etc/nginx/nginx.conf \
+		-v $(shell pwd)/client:/app/client \
+		-v $(shell pwd)/server:/app/server \
 		-p 80:80 \
 		-d ${IMAGE}
 
