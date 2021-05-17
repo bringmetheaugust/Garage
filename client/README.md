@@ -8,7 +8,7 @@ Client side for @Garage project.
 
   * `yarn` install all dependencies
   * `yarn dev` run development server
-  * open Your http://localhost:2100
+  * open Your http://localhost:81
 
   ##### Required local packages:
 

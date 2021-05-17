@@ -14,7 +14,7 @@ Web site about STO for cool guys.
 
     * `make build_dev` to build docker image
     * `make run_dev` to start container
-    * open http://localhost:2100
+    * open http://localhost:80
 
  * ### remote test
 

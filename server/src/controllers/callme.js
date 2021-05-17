@@ -12,12 +12,12 @@ export default async function({ body }, res) {
 
         try {
             const { status } = await fetch(
-                `https://api.telegram.org/bot${ TELEGRAM_TOKEN || '1886946121:AAEehYw6n3xz1eSCljt3gkZzc3lb0Z3epbA'}/sendMessage?chat_id=${ TELEGRAM_CHAT_ID || -279746682 }&parse_mode=html&text=${message}`
+                `https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage?chat_id=${TELEGRAM_CHAT_ID}&parse_mode=html&text=${message}`
             );
 
             if (status !== 200) throw Error;
         
-            res.cookie('call_request', true, { maxAge: 600000, httpOnly: false });
+            res.cookie('call_request', true, { maxAge: 600000, httpOnly: false }); // 10min for cookie
             res.sendStatus(200);
         } catch(err) {
             res.sendStatus(500);

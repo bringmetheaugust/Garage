@@ -14,6 +14,7 @@ run_dev:
 		-v $(shell pwd)/client:/app/client \
 		-v $(shell pwd)/server:/app/server \
 		-p 80:80 \
+		--env-file .env \
 		-d ${IMAGE}
 
 # prod
