@@ -2,3 +2,5 @@ webpack.* linguist-detectable=false
 
 Dockerfile.prod linguist-detectable=true
 Dockerfile.prod linguist-language=Dockerfile
+
+*.conf linguist-detectable=true

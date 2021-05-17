@@ -16,7 +16,7 @@ config.devServer = {
 	watchContentBase: true,
 	overlay: true,
 	historyApiFallback: true,
-	port: 2100,
+	port: 81,
 	hot: true,
 	inline: true,
 	clientLogLevel: 'none',

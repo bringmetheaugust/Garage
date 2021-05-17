@@ -7,17 +7,12 @@ Server side for *@Garage* project.
 ## Deploy(local)
 
   * `yarn` install all dependencies
-  * `yarn dev` run development server on **localhost:2101**
+  * `yarn dev` run development server on **localhost:82**
 
   ##### Required local packages:
 
   * *yarn* v1+
   * *NodeJS* v14.15.3
-
-## Params
-
-  * **local port**: `2101`
-  * **Docker port**: `81`
 
 ## Docs
 [REST Api docs](https://docs.fedorenka.online/?urls.primaryName=Garage).    

@@ -1,0 +1,9 @@
+README.md
+LICENSE
+Makefile
+.gitattributes
+.env
+.gitignore
+Dockerfile
+Dockerfile.prod
+.github

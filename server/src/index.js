@@ -21,7 +21,7 @@ app.
 app.post('/api/callme', checkSpamMiddleware, callmeController);
 
 try {
-    app.listen(process.env.APP_PORT || 2101);
+    app.listen(82);
 } catch(err) {
     console.error(`ошибка старта. ${err}`);
 }
