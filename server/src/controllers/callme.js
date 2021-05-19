@@ -20,6 +20,7 @@ export default async function({ body }, res) {
             res.cookie('call_request', true, { maxAge: 600000, httpOnly: false }); // 10min for cookie
             res.sendStatus(200);
         } catch(err) {
+            console.error(err);
             res.sendStatus(500);
         }
     } catch(err) {
