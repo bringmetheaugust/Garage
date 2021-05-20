@@ -1,6 +1,6 @@
 import { promises as fs } from 'fs';
 
-const REVIEWS_FILE = './db/reviews_db.json';
+import { REVIEWS_FILE } from '../constants/db.js';
 
 export default async function({ body }, res) {
     try {

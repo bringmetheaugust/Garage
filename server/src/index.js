@@ -3,6 +3,7 @@ import cookieParser from 'cookie-parser';
 
 import callmeController from './controllers/callme.js';
 import addReviewController from './controllers/addReview.js';
+import getReviewsController from './controllers/getReviews.js';
 import checkSpamMiddleware from './middleWare/checkSpam.js';
 
 const app = express();
@@ -20,6 +21,7 @@ app.
     });
 
 app.post('/api/callme', checkSpamMiddleware, callmeController);
+app.get('/api/reviews', getReviewsController);
 app.post('/api/review', addReviewController);
 
 try {

@@ -15,4 +15,7 @@ Server side for *@Garage* project.
   * *NodeJS* v14.15.3
 
 ## Docs
-[REST Api docs](https://docs.fedorenka.online/?urls.primaryName=Garage).    
+
+ * [REST Api docs](https://docs.fedorenka.online/?urls.primaryName=Garage).    
+ * DB is a `json` files in `db` folder.
+ 
