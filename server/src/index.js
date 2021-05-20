@@ -25,7 +25,7 @@ app.get('/api/reviews', getReviewsController);
 app.post('/api/review', addReviewController);
 
 try {
-    app.listen(2100);
+    app.listen(82);
 } catch(err) {
     console.error(`ошибка старта. ${err}`);
 }
