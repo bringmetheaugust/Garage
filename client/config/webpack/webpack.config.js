@@ -15,13 +15,17 @@ module.exports = {
                 loader: "babel-loader",
 			},
 			{
-				test: /[^(.module)]\.(sass|scss)$/,
+				test: /\.(sass|scss)$/,
 				use: [
 					MiniCssExtractPlugin.loader,
 					{ loader: 'css-loader' },
 					{ loader: 'postcss-loader' },
 					{ loader: 'sass-loader' }
 				]
+			},
+			{
+				test: /\.pug$/,
+				loader: "pug-loader"
 			},
 			{
 				test: /\.(woff|woff2|eot|ttf|otf)$/i,
@@ -53,8 +57,9 @@ module.exports = {
 	plugins: [
 		new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }),
 		new HtmlWebpackPlugin({
-			template: './src/index.html',
-			// favicon: './src/media/favicon.png'
+			template: './src/index.pug',
+			// favicon: './src/media/favicon.png',
+			inject: true
 		}),
 	],
 };

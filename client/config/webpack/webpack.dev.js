@@ -16,11 +16,15 @@ config.devServer = {
 	watchContentBase: true,
 	overlay: true,
 	historyApiFallback: true,
-	port: 81,
+	port: 2100,
+	// host: '0.0.0.0',
 	hot: true,
 	inline: true,
 	clientLogLevel: 'none',
-	disableHostCheck: true
+	disableHostCheck: true,
+	// watchOptions: {
+	// 	poll: true
+	// }
 };
 
 config.plugins.push(
