@@ -1,0 +1,19 @@
+#notifications
+    pointer-events: none
+    +fixed($top: 0)
+    +flex()
+    width: 100%
+    background-color: $white-color
+
+    & > *
+        margin: 10px
+        text-align: center
+        font-size: .9rem
+        border-bottom: 1px solid $black-color
+        animation: show .5s
+
+@keyframes show
+    from
+        transform: translateY(-20px)
+    to
+        transform: translateY(0px)

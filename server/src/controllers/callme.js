@@ -5,6 +5,7 @@ const { TELEGRAM_TOKEN, TELEGRAM_CHAT_ID } = process.env;
 export default async function({ body }, res) {
     try {
         const { name, phone } = body;
+        console.log(body);
 
         if (!phone) throw Error;
 
