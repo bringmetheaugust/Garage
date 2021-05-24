@@ -58,7 +58,7 @@ module.exports = {
 		new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }),
 		new HtmlWebpackPlugin({
 			template: './src/index.pug',
-			// favicon: './src/media/favicon.png',
+			favicon: './src/media/favicon.png',
 			inject: true
 		}),
 	],

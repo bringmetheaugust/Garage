@@ -1,2 +1,9 @@
 include ../layouts/header
+main
+    section.consultation
+        h3 Запросить звонок
+        form#consultation
+            input#consultation-tel(placeholder="телефон *" type="tel" required)
+            input#consultation-name(placeholder="имя" type="text")
+            button.button-simple запросить
 include ../layouts/footer

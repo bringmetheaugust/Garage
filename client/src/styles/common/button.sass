@@ -1,12 +1,26 @@
 button
-    padding: 20px
-    border: 1px solid $gray-color
-    border-radius: 50px
-    background-color: initial
-    color: $white-color
     font-family: inherit
     cursor: pointer
-    transition: border-color 1.5s
 
-    &:hover
-        border-color: $white-color
+    &:disabled
+        pointer-events: none
+        cursor: none
+    
+.button
+    &-circle
+        padding: 20px
+        border: 1px solid $gray-color
+        border-radius: 50px
+        background-color: initial
+        color: $white-color
+        transition: border-color 1.5s
+
+        &:hover
+            border-color: $white-color
+
+    &-simple
+        border: none
+        background-color: initial
+
+        &:disabled
+            color: $lightgray-color
