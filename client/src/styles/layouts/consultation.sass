@@ -1,0 +1,27 @@
+.consultation
+    +flex($jc: space-around)
+    padding: 100px
+
+    form
+        +flex($dir: column, $ai: flex-start)
+
+        input
+            margin: 10px
+
+        button
+            position: relative
+            margin: 20px 10px
+
+        &.loading
+            button
+                pointer-events: none
+
+                &::after
+                    content: ''
+                    +absolute($top: -5px, $right: -35px)
+                    display: block
+                    width: 25px
+                    height: 25px
+                    background-image: url('../media/preloader.gif')
+                    background-position: center
+                    background-size: 1000%

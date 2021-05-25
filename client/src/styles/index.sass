@@ -4,10 +4,11 @@
 @import ./_variables
 @import ./common/button
 @import ./common/input
+@import ./common/notification
 
 @import ./layouts/header
 @import ./layouts/footer
-@import ./layouts/notification
+@import ./layouts/consultation
 
 @import ./components/service
 
@@ -26,3 +27,9 @@ body
         min-height: 50px
         background-image: url('../media/preloader.gif')
         background-position: center
+
+    a
+        transition: color .3s
+
+        &:hover
+            color: $lightgray-color

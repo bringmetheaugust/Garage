@@ -13,10 +13,5 @@ main
             +service("http://img.tradera.net/images/599/386982599_8bb7f423-d233-4a96-89d6-4f2dd2138d09.jpg", "ГРМ двигатель")
             +service("https://newnoisemagazine.com/wp-content/uploads/2021/01/91A1610_BW_3000px_72DPI_SRGB-1024x683.jpg", "Ремонт и обслуживание системы охлаждения")
             +service("https://media.gettyimages.com/photos/singer-sebastian-murphy-of-bamd-viagra-boys-performs-live-at-stage-picture-id1148877871", "Другие виды работ")
-    section.consultation
-        h2 Запросить консультацию
-        form#consultation
-            input#consultation-tel(placeholder="телефон *" type="tel" required)
-            input#consultation-name(placeholder="имя" type="text")
-            button.button-simple запросить
+    include ../layouts/consultation
 include ../layouts/footer
