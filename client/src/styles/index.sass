@@ -5,10 +5,13 @@
 @import ./common/button
 @import ./common/input
 
-@import ./header
-@import ./footer
+@import ./layouts/header
+@import ./layouts/footer
+@import ./layouts/notification
+
+@import ./components/service
+
 @import ./pages/main
-@import './notification'
 
 body
     font-family: Vu
@@ -17,3 +20,9 @@ body
 
     h2
         font-size: 1.5rem
+
+    img
+        min-width: 100%
+        min-height: 50px
+        background-image: url('../media//gif_preloader.gif')
+        background-position: center
