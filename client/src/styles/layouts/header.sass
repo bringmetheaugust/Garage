@@ -5,8 +5,20 @@ header
     .logo
         font-size: 2rem
 
+    .b-logo
+        pointer-events: none
+        z-index: -1
+        +fixed($top: 10vh, $left: 0)
+        font-size: 15vw
+        opacity: 0
+        transition: opacity 1s
+
     nav
         font-size: 1rem
         li
             display: inline-block
             margin-left: 30px
+
+    &.intersection
+        .b-logo
+            opacity: .1
