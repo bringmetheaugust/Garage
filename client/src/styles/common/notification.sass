@@ -3,9 +3,9 @@
     +fixed($top: 0)
     +flex()
     width: 100%
-    background-color: $white-color
+    background: linear-gradient($white-color, transparent)
 
-    & > *
+    & > *:not(#loader)
         margin: 10px
         text-align: center
         font-size: .9rem

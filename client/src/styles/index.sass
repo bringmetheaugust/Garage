@@ -4,11 +4,15 @@
 @import ./_variables
 @import ./common/button
 @import ./common/input
+@import ./common/notification
 
-@import ./header
-@import ./footer
+@import ./layouts/header
+@import ./layouts/footer
+@import ./layouts/consultation
+
+@import ./components/service
+
 @import ./pages/main
-@import './notification'
 
 body
     font-family: Vu
@@ -16,4 +20,17 @@ body
     scroll-behavior: smooth
 
     h2
-        font-size: 1.5rem
+        margin: 50px 0
+        font-size: 1.7rem
+
+    img
+        min-width: 100%
+        min-height: 50px
+        background-image: url('../media/preloader.gif')
+        background-position: center
+
+    a
+        transition: color .3s
+
+        &:hover
+            color: $lightgray-color

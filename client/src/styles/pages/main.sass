@@ -1,26 +1,8 @@
-.services,
-.consultation
-    +flex($jc: space-around)
+.services
     padding: 100px
 
-.services
-    background-color: $black-color
-    color: $white-color
-
     ul
-        li
-            margin: 10px 0
-
-            &::before
-                content: ''
-                display: block
-    
-.consultation
-    form
-        +flex($dir: column, $ai: flex-start)
-
-        input
-            margin: 10px
-
-        button
-            margin: 20px 10px
+        display: grid
+        grid-template-columns: repeat(5, 1fr)
+        align-items: center
+        grid-gap: 50px

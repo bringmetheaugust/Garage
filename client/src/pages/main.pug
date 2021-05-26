@@ -1,21 +1,19 @@
-include ../layouts/header
-main
-    section.services
-        h2 Услуги
-        ul
-            li Комплексная диагностика автомобилей
-            li Замена технических жидкостей и фильтров
-            li Ремонт и обслуживание тормозных систем
-            li Ремонт и бслуживание рулевого управления
-            li Ремонт и обслуживание ходовой части
-            li Система сцепления
-            li ГРМ двигатель
-            li Ремонт и обслуживание системы охлаждения
-            li Другие виды работ
-    section.consultation
-        h2 Запросить консультацию
-        form#consultation
-            input#consultation-tel(placeholder="телефон *" type="tel" required)
-            input#consultation-name(placeholder="имя" type="text")
-            button.button-simple запросить
-include ../layouts/footer
+extends ../index.pug
+
+block page
+    include ../components/service
+    main
+        section.services
+            a(name="services")
+            h2 Услуги
+            ul
+                +service("https://uncrate.com/p/2018/11/viagra-boys-sports.jpg", "Комплексная диагностика автомобилей")
+                +service("https://media.resources.festicket.com/www/artists/ViagraBoys_UIBvzOm.jpg", "Замена технических жидкостей и фильтров")
+                +service("https://static.tildacdn.com/tild6134-3739-4865-b332-326263663461/viagra-boys-intervie.jpg", "Ремонт и обслуживание тормозных систем")
+                +service("https://i1.sndcdn.com/artworks-000469173756-rr99ij-t500x500.jpg", "Ремонт и бслуживание рулевого управления")
+                +service("https://www.salonav.com/wp-content/uploads/2021/02/Viagra_03.jpg", "Ремонт и обслуживание ходовой части")
+                +service("https://static-cdn.sr.se/images/4067/3db4f383-e3de-4a28-a1f6-d00a3c207f05.jpg?preset=1024x576", "Система сцепления")
+                +service("http://img.tradera.net/images/599/386982599_8bb7f423-d233-4a96-89d6-4f2dd2138d09.jpg", "ГРМ двигатель")
+                +service("https://newnoisemagazine.com/wp-content/uploads/2021/01/91A1610_BW_3000px_72DPI_SRGB-1024x683.jpg", "Ремонт и обслуживание системы охлаждения")
+                +service("https://media.gettyimages.com/photos/singer-sebastian-murphy-of-bamd-viagra-boys-performs-live-at-stage-picture-id1148877871", "Другие виды работ")
+        include ../layouts/consultation
