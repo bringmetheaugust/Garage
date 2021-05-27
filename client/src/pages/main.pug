@@ -3,17 +3,25 @@ include ../components/service
 
 block page
     main
+        #about-slider
+            ul#about-sliders
+                - var n = 0;
+                while n < 3
+                    li(pug=n++)
+                        - var i = 0;
+                        while i < 3
+                            img(src="https://www.salonav.com/wp-content/uploads/2021/02/Viagra_02.jpg" alt=i++)
         section.about
-            #about-slider
-                ul#about-sliders
-                    - var n = 0;
-                    while n < 3
-                        li(pug=n++)
-                            - var i = 0;
-                            while i < 3
-                                img(src="https://www.salonav.com/wp-content/uploads/2021/02/Viagra_02.jpg" alt=i++)
-            //- .about
-            //-     | мы - ахуенные
+            h2 О нас
+            div
+                | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores animi necessitatibus quam? Laboriosam
+                | nihil veritatis libero eveniet, possimus, eum cupiditate consequuntur nisi nemo quo mollitia officia.
+                | Voluptas maiores reprehenderit, placeat ut asperiores harum quisquam repellat nulla ducimus quam eos minus,
+                | et odio perspiciatis necessitatibus corporis iure perferendis? Dolorem eum corrupti repellendus expedita, 
+                | nemo obcaecati? Ut unde placeat delectus voluptates repellendus, dolorum mollitia numquam sunt ullam accusamus
+                | maxime nesciunt, nihil in magni neque, nulla veniam rem esse. Sit, facere numquam? Quaerat expedita totam 
+                | delectus voluptatibus, omnis blanditiis hic architecto consequuntur molestias corporis suscipit autem,
+                | labore atque libero facere exercitationem quae nemo.
         section.services
             a(name="services")
             h2 Услуги
