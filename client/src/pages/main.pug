@@ -3,6 +3,17 @@ include ../components/service
 
 block page
     main
+        section.about
+            #about-slider
+                ul#about-sliders
+                    - var n = 0;
+                    while n < 3
+                        li(pug=n++)
+                            - var i = 0;
+                            while i < 3
+                                img(src="https://www.salonav.com/wp-content/uploads/2021/02/Viagra_02.jpg" alt=i++)
+            //- .about
+            //-     | мы - ахуенные
         section.services
             a(name="services")
             h2 Услуги

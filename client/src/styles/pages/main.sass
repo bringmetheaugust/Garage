@@ -1,3 +1,29 @@
+$slider-gap: 20
+    
+.about
+    #about-slider
+        overflow: hidden
+        height: 500px
+
+        ul
+            +flex()
+            flex-wrap: wrap
+            +relative($bottom: 75%)
+            transform: rotate(10deg)
+
+            li
+                display: grid
+                grid-template-columns: repeat(3, 1fr)
+                grid-gap: #{$slider-gap}px
+                margin: #{$slider-gap / 2}px
+                transition: transform .7s ease-out
+
+                img
+                    width: 40vw
+
+                &:nth-of-type(2)
+                    +relative($left: 5%)
+    
 .services
     padding: 100px
 
