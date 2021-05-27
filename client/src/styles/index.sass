@@ -20,6 +20,9 @@ html
 
 body
     font-family: Vu
+    //for Firefox
+    scrollbar-color: $black-color $black-color
+    scrollbar-width: thin
 
     h2
         margin: 50px 0
@@ -30,3 +33,12 @@ body
         min-height: 50px
         background-image: url('../media/preloader.gif')
         background-position: center
+	
+//for Chrome
+::-webkit-scrollbar
+    width: .5vw
+    height: .5vh
+::-webkit-scrollbar-track-piece
+    background-color: $white-color
+::-webkit-scrollbar-thumb
+    background-color: $gray-color
