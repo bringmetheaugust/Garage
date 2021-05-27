@@ -5,6 +5,7 @@
 @import ./common/button
 @import ./common/input
 @import ./common/notification
+@import ./common/href
 
 @import ./layouts/header
 @import ./layouts/footer
@@ -14,10 +15,11 @@
 
 @import ./pages/main
 
+html
+    scroll-behavior: smooth
+
 body
     font-family: Vu
-
-    scroll-behavior: smooth
 
     h2
         margin: 50px 0
@@ -28,9 +30,3 @@ body
         min-height: 50px
         background-image: url('../media/preloader.gif')
         background-position: center
-
-    a
-        transition: color .3s
-
-        &:hover
-            color: $lightgray-color
