@@ -50,12 +50,20 @@ $slider-gap: 20
 
 .pricelist
     .price-category
+        & > ul > li:nth-of-type(odd)
+            background-color: $lightgray-color
         ul
             margin-left: 50px
 
             .price-item
                 +flex($jc: space-between)
                 margin: 5px 0
+                padding: 5px
 
                 .items
                     font-size: .8rem
+
+                .fixed-price
+                    margin: 0 5px
+                    font-size: .7rem
+                    color: gray

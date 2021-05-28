@@ -50,5 +50,8 @@ block page
                                                     li= items
                                     else
                                         h4= priceItem.title
-                                    .price= priceItem.price
+                                    .price
+                                        if priceItem.price.fixed
+                                            span.fixed-price от
+                                        =priceItem.price.val
         include ../layouts/consultation
