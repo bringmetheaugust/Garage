@@ -1,11 +1,16 @@
 import fetch from 'node-fetch';
+import { Request, Response } from 'express';
+
+type ICallRequest = {
+    name: string,
+    phone: string
+}
 
 const { TELEGRAM_TOKEN, TELEGRAM_CHAT_ID } = process.env;
 
-export default async function({ body }, res) {
+export default async function({ body }: Request<any, any, ICallRequest>, res: Response) {
     try {
         const { name, phone } = body;
-        console.log(body);
 
         if (!phone) throw Error;
 
