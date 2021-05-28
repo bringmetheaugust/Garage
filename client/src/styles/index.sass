@@ -35,6 +35,20 @@ body
         min-height: 50px
         background-image: url('../media/preloader.gif')
         background-position: center
+
+    .icon
+        stroke: $white-color
+        transition: fill .5s, stroke .5s
+
+        &.telegram
+            &:hover
+                stroke: $red-color
+
+        &.instagram
+            fill: $white-color
+
+            &:hover
+                fill: $red-color
 	
 // * for Chrome
 ::-webkit-scrollbar
@@ -43,4 +57,4 @@ body
 ::-webkit-scrollbar-track-piece
     background-color: $white-color
 ::-webkit-scrollbar-thumb
-    background-color: $gray-color
+    background-color: $black-color

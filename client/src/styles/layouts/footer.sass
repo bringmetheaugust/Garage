@@ -7,15 +7,20 @@ footer
         margin: 100px
         text-align: center
 
-        .tel
-            display: block
+        & > *
+            margin: 20px 0
+
+        .tel li
+            margin: 5px 0
 
         address
-            margin: 50px 0
             font-style: initial
 
-        button
-            margin: 20px
+        .soc
+            +flex()
+
+            li
+                margin: 0 10px
 
     .floor
         display: flex

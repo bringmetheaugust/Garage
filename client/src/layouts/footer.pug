@@ -2,8 +2,18 @@ footer
     a(name="contacts")
     .info
         address Дарницкий район, ул. Полеская 7, ГБК Захисник
-        a.tel(href="tel:+380636027513") +380636027513
-        //- button.button-circle Запросить звонок
+        ul.tel
+            li
+                a.tel(href="tel:+380636027513") +380 63 602 75 13
+            li
+                a.tel(href="tel:+380931195607") +380 93 119 56 07
+        ul.soc
+            li
+                a(href="https://telegram.me/jack_malbon" target="_blank")
+                    include ../layouts/icons/telegram
+            li
+                a(href="https://www.instagram.com/tkachenko.maksym1/" target="_blank")
+                    include ../layouts/icons/instagram
     .floor
         div Киев • Украина
         div Garage
