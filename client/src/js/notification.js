@@ -15,7 +15,7 @@ export default class Notification {
         this.div.innerHTML = this.message;
 
         notificationWrap.appendChild(this.div);
-        setTimeout(this.delete.bind(this), 3000);
+        setTimeout(this.delete.bind(this), 5000);
     }
 
     delete() {
