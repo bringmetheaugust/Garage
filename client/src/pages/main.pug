@@ -1,5 +1,4 @@
 extends ../index.pug
-include ../components/service
 
 block page
     main
@@ -27,105 +26,29 @@ block page
             a(name="services")
             h2 Услуги
             ul
-                +service("https://uncrate.com/p/2018/11/viagra-boys-sports.jpg", "Комплексная диагностика автомобилей")
-                +service("https://media.resources.festicket.com/www/artists/ViagraBoys_UIBvzOm.jpg", "Замена технических жидкостей и фильтров")
-                +service("https://static.tildacdn.com/tild6134-3739-4865-b332-326263663461/viagra-boys-intervie.jpg", "Ремонт и обслуживание тормозных систем")
-                +service("https://i1.sndcdn.com/artworks-000469173756-rr99ij-t500x500.jpg", "Ремонт и бслуживание рулевого управления")
-                +service("https://www.salonav.com/wp-content/uploads/2021/02/Viagra_03.jpg", "Ремонт и обслуживание ходовой части")
-                +service("https://static-cdn.sr.se/images/4067/3db4f383-e3de-4a28-a1f6-d00a3c207f05.jpg?preset=1024x576", "Система сцепления")
-                +service("http://img.tradera.net/images/599/386982599_8bb7f423-d233-4a96-89d6-4f2dd2138d09.jpg", "ГРМ двигатель")
-                +service("https://newnoisemagazine.com/wp-content/uploads/2021/01/91A1610_BW_3000px_72DPI_SRGB-1024x683.jpg", "Ремонт и обслуживание системы охлаждения")
-                +service("https://media.gettyimages.com/photos/singer-sebastian-murphy-of-bamd-viagra-boys-performs-live-at-stage-picture-id1148877871", "Другие виды работ")
+                - var serviceList = require('../constants/serviceList.json')
+                each service in serviceList
+                    li.service
+                        img(src= service.img alt= service.title)
+                        h3= service.title
         section.pricelist
             a(name="pricelist")
-            -
-                const pricelist = [
-                    {
-                        title: 'Диагностика',
-                        list: [
-                            {
-                                title: 'Комплексная диагностика',
-                                price: '300',
-                                items: [
-                                    'Ходовая часть / Амортизация',
-                                    'Тормозная система',
-                                    'Навесное оборудование',
-                                    'Жидкости',
-                                    'Подтекания'
-                                ]
-                            },
-                            { title: 'Предпрожная диагностика', price: '600' },
-                            { title: 'Диагностика лакокрасочного покрытия', price: '150' }
-                        ]
-                    },
-                    {
-                        title: 'Замена жидкостей и фильтров',
-                        list: [
-                            { title: 'Замена масла ДВС', price: 'от 200' },
-                            { title: 'Замена масла МКПП', price: '150' },
-                            { title: 'Замена масла АКПП', price: 'от 300' },
-                            { title: 'Замена воздушного фильтра', price: 'от 100' },
-                            { title: 'Замена фильтра салона', price: 'от 100' },
-                            { title: 'Замена бензинового топливного фильтра', price: 'от 150' },
-                            { title: 'Замена топливного фильтра дизель', price: 'от 250' },
-                            { title: 'Замена масла в роздаточной коробке', price: '150' },
-                            { title: 'Замена масла в мостах', price: '150' },
-                            { title: 'Замена жидкости системы охлаждения', price: 'от 250' },
-                            { title: 'Смазка 1 крестовины кардана', price: '100' }
-                        ]
-                    },
-                    {
-                        title: 'Тормозная система',
-                        list: [
-                            { title: 'Замена тормозного шланга', price: '200' },
-                            { title: 'Замена тормозных колодок дисковых с чисткой и смазкой направляющих ось', price: '300' },
-                            { title: 'Замена тормозных колодок барабанных (комплект)', price: 'от 650' },
-                            { title: 'Регулировка ручного тормоза', price: 'от 150' },
-                            { title: 'Замена троса ручника 1шт.', price: 'от 250' },
-                            { title: 'Замена ремкомплкта суппорта 1 поршень', price: 'от 450' },
-                            { title: 'Замена главного тормозного цилиндра', price: 'от 800' },
-                            { title: 'Замена тормозных дисков ось', price: '500' },
-                            { title: 'Замена тормозной жидкости', price: '600' }
-                        ]
-                    },
-                    {
-                        title: 'Рулевое управление',
-                        list: [
-                            { title: 'Замена рулевого наконечника', price: '200' },
-                            { title: 'Замена рулевых тяг и наконечников (комплект)', price: '750' }
-                        ]
-                    },
-                    {
-                        title: 'Ходовая часть',
-                        list: [
-                            { title: 'Замена стойки стабилизатора', price: '150' },
-                            { title: 'Замена втулки стабилизатора 1шт.', price: '200' },
-                            { title: 'Снятие и установка рычага', price: 'от 150' },
-                            { title: 'Точка переприсовки сайлентблока 1шт.', price: 'от 50' },
-                            { title: 'Замена шаровой опоры', price: 'от 150' },
-                            { title: 'Замена ступичного подшибника', price: 'от 550' },
-                            { title: 'Замена переднего амортизатора', price: 'от 450' },
-                            { title: 'Замена заднего амортизатора', price: 'от 250' },
-                            { title: 'Замена ШРУСа', price: 'от 450' },
-                            { title: 'Замена пыльника ШРУСа', price: 'от 450' }
-                        ]
-                    },
-                ]
             h2 Цены
             ul
-                each valN, keyN in pricelist
+                - var priceList = require('../constants/priceList.json')
+                each priceCategory in priceList
                     li.price-category
-                        h3= valN.title
+                        h3= priceCategory.title
                         ul
-                            each valI, keyI in valN.list
+                            each priceItem, keyI in priceCategory.list
                                 li.price-item
-                                    if valI.items
+                                    if priceItem.items
                                         h4
-                                            =valI.title
+                                            =priceItem.title
                                             ul.items
-                                                each items in valI.items
+                                                each items in priceItem.items
                                                     li= items
                                     else
-                                        h4= valI.title
-                                    .price= valI.price
+                                        h4= priceItem.title
+                                    .price= priceItem.price
         include ../layouts/consultation
