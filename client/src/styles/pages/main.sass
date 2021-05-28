@@ -1,7 +1,8 @@
 $slider-gap: 20
 
 .services,
-.about
+.about,
+.pricelist
     margin: $side-margin-desktop
     
 
@@ -39,3 +40,16 @@ $slider-gap: 20
         grid-template-columns: repeat(5, 1fr)
         align-items: center
         grid-gap: 50px
+
+
+.pricelist
+    .price-category
+        ul
+            margin-left: 50px
+
+            .price-item
+                +flex($jc: space-between)
+                margin: 5px 0
+
+                .items
+                    font-size: .8rem
