@@ -1,8 +1,55 @@
-.services
-    padding: 100px
+$slider-gap: 20
 
+.services,
+.about,
+.pricelist
+    margin: $side-margin-desktop
+    
+
+#about-slider
+    overflow: hidden
+    height: 500px
+
+    ul
+        +flex()
+        flex-wrap: wrap
+        +relative($bottom: 75%)
+        transform: rotate(10deg)
+
+        li
+            display: grid
+            grid-template-columns: repeat(3, 1fr)
+            grid-gap: #{$slider-gap}px
+            margin: #{$slider-gap / 2}px
+            transition: transform .7s ease-out
+
+            img
+                width: 40vw
+
+            &:nth-of-type(2)
+                +relative($left: 5%)
+
+.about
+    a
+        margin: 50px 0
+        text-decoration: underline
+    
+.services
     ul
         display: grid
         grid-template-columns: repeat(5, 1fr)
         align-items: center
         grid-gap: 50px
+
+
+.pricelist
+    .price-category
+        ul
+            margin-left: 50px
+
+            .price-item
+                +flex($jc: space-between)
+                margin: 5px 0
+
+                .items
+                    font-size: .8rem

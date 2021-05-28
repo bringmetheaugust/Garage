@@ -5,6 +5,7 @@
 @import ./common/button
 @import ./common/input
 @import ./common/notification
+@import ./common/href
 
 @import ./layouts/header
 @import ./layouts/footer
@@ -14,23 +15,34 @@
 
 @import ./pages/main
 
+html
+    scroll-behavior: smooth
+
 body
     font-family: Vu
-
-    scroll-behavior: smooth
+    //for Firefox
+    scrollbar-color: $black-color $black-color
+    scrollbar-width: thin
 
     h2
         margin: 50px 0
         font-size: 1.7rem
+
+    h3
+        margin: 10px 0
+        font-size: 1.2rem
 
     img
         min-width: 100%
         min-height: 50px
         background-image: url('../media/preloader.gif')
         background-position: center
-
-    a
-        transition: color .3s
-
-        &:hover
-            color: $lightgray-color
+	
+//for Chrome
+::-webkit-scrollbar
+    width: .5vw
+    height: .5vh
+::-webkit-scrollbar-track-piece
+    background-color: $white-color
+::-webkit-scrollbar-thumb
+    background-color: $gray-color
