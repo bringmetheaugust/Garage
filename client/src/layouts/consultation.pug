@@ -2,6 +2,10 @@ section.consultation
     a(name="consultation")
     h2 Запросить консультацию
     form#consultation
-        input#consultation-tel(placeholder="телефон *" type="tel" required)
+        input#consultation-tel(
+            type="tel"
+            placeholder="телефон *"
+            required pattern="[0-9]{9,12}"
+        )
         input#consultation-name(placeholder="имя" type="text")
         button запросить

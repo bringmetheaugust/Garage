@@ -2,7 +2,9 @@ import Notification from './notification.js';
 
 document.getElementById('consultation').addEventListener('submit', async e => {
     e.preventDefault();
-    e.target.classList.add('loading');
+    const { target } = e;
+
+    target.classList.add('loading');
     
     try {
         const res = await fetch('http://localhost:2101/api/callme', {
@@ -24,6 +26,6 @@ document.getElementById('consultation').addEventListener('submit', async e => {
             default: new Notification('error', 'Извините, произошла ошибка');
         }
     } finally {
-        e.target.classList.remove('loading');
+        target.classList.remove('loading');
     }
 });

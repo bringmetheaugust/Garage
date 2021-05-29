@@ -25,3 +25,17 @@
                     background-image: url('../media/preloader.gif')
                     background-position: center
                     background-size: 1000%
+
+    @media only screen and (max-width: 1024px)
+        margin: 10px $side-margin-mobile
+        flex-direction: column
+        text-align: center
+
+        form
+            align-items: center
+
+            input
+                text-align: center
+
+                &::placeholder
+                    text-align: center
