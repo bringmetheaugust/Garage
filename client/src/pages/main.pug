@@ -4,12 +4,11 @@ block page
     main
         #about-slider
             ul#about-sliders
-                - var n = 0;
-                while n < 3
-                    li(pug=n++)
-                        - var i = 0;
-                        while i < 3
-                            img(src="https://www.salonav.com/wp-content/uploads/2021/02/Viagra_02.jpg" alt=i++)
+                - var aboutUsSliders = require('../constants/aboutUsSlider.json')
+                each row in aboutUsSliders
+                    li
+                        each key in row
+                            img(src=require('../media/about_slider/' + key).default alt='СТО ремонт')
         section.about
             h2 О нас
             div

@@ -4,20 +4,7 @@ const options = {
     threshold: 0
 };
 
-// header background logo
-
-const headerObserver = new IntersectionObserver(headerCallback, options);
-headerObserver.observe(document.querySelector('header'));
-
-function headerCallback(entries) {
-    const header = entries[0];
-
-    header.isIntersecting ?
-        header.target.classList.remove('intersection') :
-        header.target.classList.add('intersection');
-}
-
-// about us section
+// * about us section
 
 const aboutSectionObserver = new IntersectionObserver(aboutSectionCallback, options);
 aboutSectionObserver.observe(document.getElementById('about-slider'));
@@ -39,3 +26,24 @@ function moveAboutSlider() {
             slide.style.transform = `translateX(${-scrollY}px) translateY(${scrollY}px)` ;
     });
 }
+
+// * header background logo
+
+const backgroundLogo = document.getElementById('b-logo');
+
+window.addEventListener('scroll', () => {
+    backgroundLogo.style.opacity = 0.1 - window.pageYOffset * 0.000025;
+});
+
+// * header background logo (old design)
+
+// const headerObserver = new IntersectionObserver(headerCallback, options);
+// headerObserver.observe(document.querySelector('header'));
+
+// function headerCallback(entries) {
+//     const header = entries[0];
+
+//     header.isIntersecting ?
+//         header.target.classList.remove('intersection') :
+//         header.target.classList.add('intersection');
+// }

@@ -1,4 +1,14 @@
 {
-  "presets": [],
-  "plugins": []
+  "presets": [
+    "@babel/preset-env"
+  ],
+  "plugins": [
+    "@babel/plugin-transform-spread",
+    "@babel/plugin-transform-destructuring",
+    ["@babel/plugin-transform-runtime",
+      {
+        "regenerator": true
+      }
+    ]
+  ]
 }
