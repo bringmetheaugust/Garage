@@ -15,8 +15,7 @@ header
             z-index: -1
             +fixed($top: 10vh, $left: 0)
             font-size: 15vw
-            opacity: .1 // (0) for old design
-            // transition: opacity 1s // (0) for old design
+            opacity: .1
 
         nav
             font-size: 1rem
@@ -72,13 +71,11 @@ header
         
         #mobile-curtain
             display: block
-    
-    // * old design
-    // &.intersection
-    //     #b-logo
-    //         opacity: .1
 
     @media only screen and (max-width: $mobile-device-width)
+        +fixed($top: 0, $left: 0)
+        width: 100%
+
         .header-wrap
             padding: 10px $side-margin-mobile
             background-color: $white-color

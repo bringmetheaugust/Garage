@@ -1,13 +1,19 @@
 $slider-gap-desktop: 20px
 $slider-gap-mobile: 5px
 
-.services,
-.about,
-.pricelist
-    margin: $side-margin-desktop
+main
+    .services,
+    .about,
+    .pricelist
+        margin: $side-margin-desktop
 
     @media only screen and (max-width: $mobile-device-width)
-        margin: 10px $side-margin-mobile
+        margin-top: 65px
+
+        .services,
+        .about,
+        .pricelist
+            margin: 10px $side-margin-mobile
 
 #about-slider
     overflow: hidden
@@ -25,7 +31,7 @@ $slider-gap-mobile: 5px
             transition: transform .5s ease-out
 
             img
-                min-width: initial
+                min-width: 50px
                 height: inherit
 
     @media only screen and (max-width: $mobile-device-width)
