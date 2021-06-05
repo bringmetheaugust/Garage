@@ -1,21 +1,25 @@
 $icon-circle-radius: 100
+$main-padding: 20px
     
 #consulstation-fixed
     z-index: 3
     +fixed($right: 0, $bottom: 0)
-    padding: 20px
+    padding: $main-padding
 
     .icon-wrapp
-        .consultation-button
+        position: relative
+
+        .call
             stroke-width: 0
             fill: $red-color
-            transition: opacity .3s
-            cursor: pointer
+
+        .close
+            display: none
 
         .icon-lines
             z-index: -1
             pointer-events: none
-            +absolute($right: 0, $bottom: 0)
+            +absolute($right: -$main-padding, $bottom: -$main-padding)
 
             li
                 +absolute()
@@ -48,15 +52,44 @@ $icon-circle-radius: 100
                     &:first-of-type
                         transform: scale(250)
 
-                    &:nth-last-of-type(2)
-                        transform: scale(110)
+                    &:last-of-type
+                        transform: scale(60)
+
+    .dialog
+        display: none
+        +absolute($right: 0, $bottom: 0)
+        box-sizing: border-box
+        min-width: 500px
+        min-height: 60vh
+        padding: 20px
+
+        .step
+            font-size: 1.3rem
+            
+        .menu
+            margin: 30px 0
+
+            li
+                margin: 10px 0
+                cursor: pointer
+
+        @media only screen and (max-width: $mobile-device-width)
+            min-width: 100vw
+            min-height: 100vh
+            text-align: center
+
+            .step
+                font-size: 1.1rem
 
     &.active
         .icon-wrapp
             pointer-events: none
 
-            .consultation-button
-                opacity: 0
+            .call
+                display: none
+
+            .close
+                display: block
 
             .icon-lines
                 pointer-events: auto
@@ -70,7 +103,7 @@ $icon-circle-radius: 100
                         transform: scale(2000)
                         background-color: $white-color
 
-        .curtain
+        .dialog
             display: block
 
     @media only screen and (max-width: $mobile-device-width)

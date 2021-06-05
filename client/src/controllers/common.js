@@ -3,10 +3,15 @@ const header = document.querySelector('header');
 const consultationFixed = document.getElementById('consulstation-fixed');
 const ACTIVE_CLASS = 'active';
 
-[ document.getElementById('burger-menu'), ...document.querySelectorAll('header nav a')].forEach(i => {
-    i.addEventListener('click', toggleItem.bind(header));
+document.getElementById('burger-menu').addEventListener('click', toggleItem.bind(header));
+[ ...document.querySelectorAll('header nav a') ].forEach(href => {
+    href.addEventListener('click', () => {
+        header.classList.contains(ACTIVE_CLASS) && toggleItem.call(header);
+    });
 });
-document.getElementById('consultation-call').addEventListener('click', toggleItem.bind(consultationFixed));
+[ document.getElementById('consultation-call'), document.getElementById('consultation-close') ].forEach(i => {
+    i.addEventListener('click', toggleItem.bind(consultationFixed));
+});
 curtain.addEventListener('click', toggleCurtain);
 
 function toggleItem(isEvent) {
