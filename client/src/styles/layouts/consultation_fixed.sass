@@ -1,0 +1,64 @@
+$icon-circle-radius: 100
+    
+#consulstation-fixed
+    z-index: 3
+    +fixed($right: 0, $bottom: 0)
+    padding: 20px
+
+    .icon-wrapp
+        .consultation-button
+            stroke-width: 0
+            fill: $red-color
+            transition: opacity .3s
+            cursor: pointer
+
+        .icon-lines
+            z-index: -1
+            pointer-events: none
+            +absolute($right: 0, $bottom: 0)
+
+            li
+                +absolute()
+                width: 1px
+                height: 1px
+                border-radius: 50%
+                transition: transform .5s
+
+                &:first-of-type
+                    background-color: $lightgray-color
+
+                &:nth-last-of-type(2)
+                    background-color: $gray-color
+
+                &:last-of-type
+                    background-color: black
+
+        &:hover
+            .icon-lines
+                li
+                    &:first-of-type
+                        transform: scale(300)
+
+                    &:nth-last-of-type(2)
+                        transform: scale(140)
+                    
+                    &:last-of-type
+                        transform: scale(40)
+
+    &.active
+        .icon-wrapp
+            pointer-events: none
+
+            .consultation-button
+                opacity: 0
+
+            .icon-lines
+                li
+                    &:nth-last-of-type(2)
+                        transform: scale(2000)
+
+        .curtain
+            display: block
+
+    @media only screen and (max-width: $mobile-device-width)
+        padding: 10px

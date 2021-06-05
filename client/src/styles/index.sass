@@ -6,10 +6,13 @@
 @import ./common/input
 @import ./common/notification
 @import ./common/href
+@import ./common/curatin
 
 @import ./layouts/header
 @import ./layouts/footer
 @import ./layouts/consultation
+@import ./layouts/consultation_fixed
+@import ./layouts/icons
 
 @import ./pages/main
 
@@ -35,20 +38,6 @@ body
         min-height: 50px
         background-image: url('../media/preloader.gif')
         background-position: center
-
-    .icon
-        stroke: $white-color
-        transition: fill .5s, stroke .5s
-
-        &.telegram
-            &:hover
-                stroke: $red-color
-
-        &.instagram
-            fill: $white-color
-
-            &:hover
-                fill: $red-color
 
     &.no-scroll
         overflow-y: hidden

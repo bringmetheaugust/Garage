@@ -1,0 +1,10 @@
+#consulstation-fixed
+    .icon-wrapp#consultation-call
+        include ./icons/phone_call
+
+        - var lineCount = 0
+        ul.icon-lines
+            while lineCount < 3
+                li(pug= lineCount++)
+    form
+    .curtain

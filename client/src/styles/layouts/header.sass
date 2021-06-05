@@ -41,14 +41,6 @@ header
             span
                 font-size: 9px
                 transition: opacity .3s, transform .3s
-    
-    #mobile-curtain
-        z-index: 1
-        display: none
-        +absolute($top: 0, $left: 0)
-        width: 100vw
-        height: 100vh
-        background-color: #00000087
 
     &.active
         .header-wrap
@@ -68,9 +60,6 @@ header
                 span
                     transform: translateY(10px)
                     opacity: 0
-        
-        #mobile-curtain
-            display: block
 
     @media only screen and (max-width: $mobile-device-width)
         +fixed($top: 0, $left: 0)
