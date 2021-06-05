@@ -22,7 +22,7 @@ $icon-circle-radius: 100
                 width: 1px
                 height: 1px
                 border-radius: 50%
-                transition: transform .5s
+                transition: transform .5s, background-color .2s
 
                 &:first-of-type
                     background-color: $lightgray-color
@@ -34,16 +34,22 @@ $icon-circle-radius: 100
                     background-color: black
 
         &:hover
-            .icon-lines
-                li
+            .icon-lines li
+                &:first-of-type
+                    transform: scale(300)
+
+                &:nth-last-of-type(2)
+                    transform: scale(140)
+                
+                &:last-of-type
+                    transform: scale(40)
+
+                @media only screen and (max-width: $mobile-device-width)
                     &:first-of-type
-                        transform: scale(300)
+                        transform: scale(250)
 
                     &:nth-last-of-type(2)
-                        transform: scale(140)
-                    
-                    &:last-of-type
-                        transform: scale(40)
+                        transform: scale(110)
 
     &.active
         .icon-wrapp
@@ -53,9 +59,16 @@ $icon-circle-radius: 100
                 opacity: 0
 
             .icon-lines
+                pointer-events: auto
+
                 li
-                    &:nth-last-of-type(2)
+                    &:first-of-type,
+                    &:last-of-type
+                        display: none
+
+                    &:nth-of-type(2)
                         transform: scale(2000)
+                        background-color: $white-color
 
         .curtain
             display: block
