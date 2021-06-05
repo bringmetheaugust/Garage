@@ -1,0 +1,20 @@
+include ./icons/close
+
+#consulstation-fixed
+    .dialog
+        h2 Записаться на консультацию
+        .step Выберите услугу
+        ul.menu
+            li Диагностика
+            li Регулярное ТО
+            li Развал схождения
+            li Компъютерная диагностика
+            li отсосать за печеньку
+    .icon-wrapp
+        include ./icons/phone_call
+        +closeButton('consultation-close')
+
+        - var lineCount = 0
+        ul.icon-lines
+            while lineCount < 3
+                li(pug= lineCount++)

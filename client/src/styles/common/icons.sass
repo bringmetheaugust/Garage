@@ -1,0 +1,24 @@
+.icon
+    transition: fill .5s, stroke .5s
+    cursor: pointer
+
+    &.telegram
+        stroke: $white-color
+
+        &:hover
+            stroke: $red-color
+
+    &.instagram
+        fill: $white-color
+        stroke: $white-color
+
+        &:hover
+            fill: $red-color
+
+    &.close
+        pointer-events: auto
+        fill: $red-color
+        transition: transform .5s
+
+        &:hover
+            transform: rotate(-90deg)

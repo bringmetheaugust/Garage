@@ -1,6 +1,6 @@
 import './index.pug';
 import './styles/index.sass';
 
-import './js/consultation.js';
-import './js/scroll.js';
-import './js/burgerMenu.js';
+import './controllers/common';
+import './controllers/consultation';
+import './controllers/scroll';

@@ -1,13 +1,20 @@
 $slider-gap-desktop: 20px
 $slider-gap-mobile: 5px
 
-.services,
-.about,
-.pricelist
-    margin: $side-margin-desktop
+main
+    .services,
+    .about,
+    .workflow,
+    .pricelist
+        margin: $side-margin-desktop
 
     @media only screen and (max-width: $mobile-device-width)
-        margin: 10px $side-margin-mobile
+        margin-top: 65px
+
+        .services,
+        .about,
+        .pricelist
+            margin: 10px $side-margin-mobile
 
 #about-slider
     overflow: hidden
@@ -25,7 +32,7 @@ $slider-gap-mobile: 5px
             transition: transform .5s ease-out
 
             img
-                min-width: initial
+                min-width: 200px
                 height: inherit
 
     @media only screen and (max-width: $mobile-device-width)
@@ -36,6 +43,9 @@ $slider-gap-mobile: 5px
             height: 100px
             margin: $slider-gap-mobile
 
+            img
+                min-width: 50px
+
 .about
     a
         margin: 50px 0
@@ -44,6 +54,33 @@ $slider-gap-mobile: 5px
     @media only screen and (max-width: $mobile-device-width)
         font-size: .8rem
         text-align: center
+
+.workflow
+    color: initial
+
+    ul
+        display: grid
+        grid-template-columns: repeat(4, 1fr)
+        align-items: center
+        grid-gap: 5vw
+        text-align: center
+
+        li
+            position: relative
+            +flex($dir: column)
+            height: 100%
+            padding: 10px
+            background-color: $lightgray-color
+
+            .num
+                +absolute($top: -10px)
+                font-size: 1.2rem
+
+            .content
+                width: 130%
+
+            .button
+                margin: 5px
     
 .services
     ul

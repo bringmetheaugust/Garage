@@ -15,11 +15,11 @@ header
             z-index: -1
             +fixed($top: 10vh, $left: 0)
             font-size: 15vw
-            opacity: .1 // (0) for old design
-            // transition: opacity 1s // (0) for old design
+            opacity: .1
 
         nav
             font-size: 1rem
+
             li
                 display: inline-block
                 margin-left: 30px
@@ -42,43 +42,29 @@ header
             span
                 font-size: 9px
                 transition: opacity .3s, transform .3s
-    
-    #mobile-curtain
-        z-index: 1
-        display: none
-        +absolute($top: 0, $left: 0)
-        width: 100vw
-        height: 100vh
-        background-color: #00000087
 
-    &.active
-        .header-wrap
-            nav
-                max-height: 300px
+    &.active .header-wrap
+        nav
+            max-height: 300px
 
-            #burger-menu
-                .line
-                    &:first-of-type
-                        top: 12px
-                        transform: rotate(45deg)
+        #burger-menu
+            .line
+                &:first-of-type
+                    top: 12px
+                    transform: rotate(45deg)
 
-                    &:last-of-type
-                        top: 3px
-                        transform: rotate(-45deg)
+                &:last-of-type
+                    top: 3px
+                    transform: rotate(-45deg)
 
-                span
-                    transform: translateY(10px)
-                    opacity: 0
-        
-        #mobile-curtain
-            display: block
-    
-    // * old design
-    // &.intersection
-    //     #b-logo
-    //         opacity: .1
+            span
+                transform: translateY(10px)
+                opacity: 0
 
     @media only screen and (max-width: $mobile-device-width)
+        +fixed($top: 0, $left: 0)
+        width: 100%
+
         .header-wrap
             padding: 10px $side-margin-mobile
             background-color: $white-color

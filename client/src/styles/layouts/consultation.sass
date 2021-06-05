@@ -12,19 +12,18 @@
             position: relative
             margin: 20px 10px
 
-        &.loading
-            button
-                pointer-events: none
+        &.loading button
+            pointer-events: none
 
-                &::after
-                    content: ''
-                    +absolute($top: -5px, $right: -35px)
-                    display: block
-                    width: 25px
-                    height: 25px
-                    background-image: url('../media/preloader.gif')
-                    background-position: center
-                    background-size: 1000%
+            &::after
+                content: ''
+                +absolute($top: -5px, $right: -35px)
+                display: block
+                width: 25px
+                height: 25px
+                background-image: url('../media/preloader.gif')
+                background-position: center
+                background-size: 1000%
 
     @media only screen and (max-width: $mobile-device-width)
         margin: 10px $side-margin-mobile
