@@ -1,13 +1,16 @@
 import Notification from './notification.js';
+import { consultationFixed, toggleCurtain, ACTIVE_CLASS } from './common';
 
-document.getElementById('consultation').addEventListener('submit', async e => {
+[ ...document.querySelectorAll('.consultation-form') ].forEach(form => {
+    form.addEventListener('submit', sendForm);
+});
+
+async function sendForm(e) {
     e.preventDefault();
     const { target } = e;
-
-    target.classList.add('loading');
     
     try {
-        const res = await fetch('http://localhost:2101/api/callme', {
+        const { ok, status } = await fetch('http://localhost:2101/api/callme', {
             method: 'POST',
             headers: { 'Content-type': 'application/json' },
             body: JSON.stringify({
@@ -16,16 +19,25 @@ document.getElementById('consultation').addEventListener('submit', async e => {
             })
         });
 
-        if (!res.ok) throw new Error(res.status);
+        if (!ok) throw new Error(status);
 
-        new Notification('success', 'Ваш запрос отправлен');
+        target.classList.add('loading');
+
+        new Notification(Notification.alertTypes.success, 'Ваш запрос отправлен');
+
+        if (consultationFixed.classList.contains(ACTIVE_CLASS)) {
+            consultationFixed.classList.remove(ACTIVE_CLASS);
+            toggleCurtain();
+        }
     } catch({ message }) {
+        const { error } = Notification.alertTypes;
+
         switch(message) {
-            case 400: return new Notification('error', 'Неверно указанные данные');
-            case 403: return new Notification('error', 'Вы уже отправляли запрос<br>Попробуйте еще раз через 10 минут');
-            default: new Notification('error', 'Извините, произошла ошибка');
+            case 400: return new Notification(error, 'Неверно указанные данные');
+            case 403: return new Notification(error, 'Вы уже отправляли запрос<br>Попробуйте еще раз через 10 минут');
+            default: new Notification(error, 'Извините, произошла ошибка');
         }
     } finally {
         target.classList.remove('loading');
     }
-});
+}

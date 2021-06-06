@@ -55,31 +55,19 @@ $main-padding: 20px
                     &:last-of-type
                         transform: scale(60)
 
-    .dialog
+    .consultation
+        +flex($dir: column, $ai: flex-start)
         display: none
         +absolute($right: 0, $bottom: 0)
-        box-sizing: border-box
-        min-width: 500px
-        min-height: 60vh
-        padding: 20px
-
-        .step
-            font-size: 1.3rem
-            
-        .menu
-            margin: 30px 0
-
-            li
-                margin: 10px 0
-                cursor: pointer
+        margin: 100px
 
         @media only screen and (max-width: $mobile-device-width)
+            align-items: center
+            box-sizing: border-box
             min-width: 100vw
             min-height: 100vh
-            text-align: center
-
-            .step
-                font-size: 1.1rem
+            margin: 0
+            padding: 10px
 
     &.active
         .icon-wrapp
@@ -100,11 +88,15 @@ $main-padding: 20px
                         display: none
 
                     &:nth-of-type(2)
-                        transform: scale(2000)
+                        transform: scale(1500)
                         background-color: $white-color
 
-        .dialog
-            display: block
+        .consultation
+            display: flex
 
     @media only screen and (max-width: $mobile-device-width)
         padding: 10px
+
+        &.active
+            .icon-lines li:nth-of-type(2)
+                transform: scale(2000) !important

@@ -6,9 +6,9 @@ html(lang="ru")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         title Garage
     body
+        include ./components/header
+        block page
+        include ./components/footer
+        +consultation-fixed()
         noindex#notifications
         noindex#curtain
-        include ./layouts/consultation_fixed
-        include ./layouts/header
-        block page
-        include ./layouts/footer

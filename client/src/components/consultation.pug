@@ -1,0 +1,28 @@
+include ./icons/close
+
+mixin consultation(withHref = false)
+    .consultation
+        if withHref
+            a(name="consultation")
+
+        h2 Запросить консультацию
+        form.consultation-form
+            input#consultation-tel(
+                type="tel"
+                placeholder="телефон *"
+                required pattern="[0-9]{9,12}"
+            )
+            input#consultation-name(placeholder="имя" type="text")
+            button запросить
+
+mixin consultation-fixed()
+    #consulstation-fixed
+        +consultation()
+        .icon-wrapp
+            include ./icons/phone_call
+            +closeButton('consultation-close')
+
+            - var lineCount = 0
+            ul.icon-lines
+                while lineCount < 3
+                    li(pug= lineCount++)

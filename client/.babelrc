@@ -5,7 +5,8 @@
   "plugins": [
     "@babel/plugin-transform-spread",
     "@babel/plugin-transform-destructuring",
-    ["@babel/plugin-transform-runtime",
+    [
+      "@babel/plugin-transform-runtime",
       {
         "regenerator": true
       }
