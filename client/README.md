@@ -13,4 +13,4 @@ Client side for @Garage project.
   ##### Required local packages:
 
   * *yarn* v1+
-  * *NodeJS* v14.15.3
+  * *NodeJS* v14.17.0

@@ -1,10 +1,10 @@
 #notifications
-    z-index: 2
+    z-index: 5
     pointer-events: none
     +fixed($top: 0)
     +flex()
     width: 100%
-    background: linear-gradient($white-color 70% , transparent 100%)
+    background: $white-color
 
     & > *:not(#loader)
         margin: 10px
@@ -12,6 +12,9 @@
         font-size: .9rem
         border-bottom: 1px solid $black-color
         animation: show .5s
+
+        @media only screen and (max-width: $mobile-device-width)
+            margin: 20px
 
     .error
         color: $red-color
