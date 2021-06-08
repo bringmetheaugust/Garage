@@ -52,6 +52,7 @@ block page
                 each service in serviceList
                     li.service
                         img(src= service.img alt= service.title)
+                        // TODO - img(src= require('../media/services/' + service.img).default alt= service.title) for new images
                         h3= service.title
 
         section.pricelist
