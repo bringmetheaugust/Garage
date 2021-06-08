@@ -1,3 +1,6 @@
+$icon-circle-radius: 100
+$main-padding: 20px
+    
 .consultation
     +flex($jc: space-evenly)
     margin: $side-margin-desktop
@@ -38,3 +41,103 @@
 
                 &::placeholder
                     text-align: center
+
+#consulstation-fixed
+    z-index: 3
+    +fixed($right: 0, $bottom: 0)
+    padding: $main-padding
+
+    .icon-wrapp
+        position: relative
+
+        .call
+            stroke-width: 0
+            fill: $red-color
+
+        .close
+            display: none
+
+        .icon-lines
+            z-index: -1
+            pointer-events: none
+            +absolute($right: -$main-padding, $bottom: -$main-padding)
+
+            li
+                +absolute()
+                width: 1px
+                height: 1px
+                border-radius: 50%
+                transition: transform .5s, background-color .2s
+
+                &:first-of-type
+                    background-color: $lightgray-color
+
+                &:nth-last-of-type(2)
+                    background-color: $gray-color
+
+                &:last-of-type
+                    background-color: black
+
+        &:hover
+            .icon-lines li
+                &:first-of-type
+                    transform: scale(300)
+
+                &:nth-last-of-type(2)
+                    transform: scale(140)
+                
+                &:last-of-type
+                    transform: scale(40)
+
+                @media only screen and (max-width: $mobile-device-width)
+                    &:first-of-type
+                        transform: scale(250)
+
+                    &:last-of-type
+                        transform: scale(60)
+
+    .consultation
+        +flex($dir: column, $ai: flex-start)
+        display: none
+        +absolute($right: 0, $bottom: 0)
+        margin: 100px
+
+        @media only screen and (max-width: $mobile-device-width)
+            align-items: center
+            box-sizing: border-box
+            min-width: 100vw
+            min-height: 100vh
+            margin: 0
+            padding: 10px
+
+    &.active
+        .icon-wrapp
+            pointer-events: none
+
+            .call
+                display: none
+
+            .close
+                display: block
+
+            .icon-lines
+                pointer-events: auto
+
+                li
+                    &:first-of-type,
+                    &:last-of-type
+                        display: none
+
+                    &:nth-of-type(2)
+                        transform: scale(1500)
+                        background-color: $white-color
+
+        .consultation
+            display: flex
+
+    @media only screen and (max-width: $mobile-device-width)
+        padding: 10px
+
+        &.active
+            .icon-lines li:nth-of-type(2)
+                transform: scale(2500) !important

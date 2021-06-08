@@ -23,7 +23,7 @@ async function sendForm(e) {
 
         target.classList.add('loading');
 
-        new Notification(Notification.alertTypes.success, 'Ваш запрос отправлен');
+        new Notification(Notification.alertTypes.success, 'Ваш запрос отправлен. Наш специалист скоро с Вами свяжется');
 
         if (consultationFixed.classList.contains(ACTIVE_CLASS)) {
             consultationFixed.classList.remove(ACTIVE_CLASS);
