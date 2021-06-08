@@ -4,9 +4,11 @@ $slider-gap-mobile: 5px
 main
     .services,
     .about,
-    .workflow,
     .pricelist
         margin: $side-margin-desktop
+
+    .workflow
+        padding: $side-margin-desktop
 
     @media only screen and (max-width: $mobile-device-width)
         margin-top: 65px
@@ -15,6 +17,9 @@ main
         .about,
         .pricelist
             margin: 10px $side-margin-mobile
+
+        .workflow
+            padding: 10px $side-margin-mobile
 
 #about-slider
     overflow: hidden
@@ -56,32 +61,59 @@ main
         text-align: center
 
 .workflow
-    color: initial
+    +flex($dir: column)
+    color: $white-color
+    background-color: $black-color
 
     ul
         display: grid
         grid-template-columns: repeat(4, 1fr)
         align-items: center
-        grid-gap: 5vw
+        grid-gap: 20px
         text-align: center
 
         li
+            box-sizing: border-box
             position: relative
             +flex($dir: column)
             height: 100%
-            padding: 10px
-            background-color: $lightgray-color
+            padding: 20px 10px
+            border: 1px solid $lightgray-color
 
             .num
                 +absolute($top: -10px)
-                font-size: 1.2rem
+                padding: 0 10px
+                background-color: $black-color
+                color: $red-color
 
-            .content
-                width: 130%
+    .button
+        margin-top: 50px
 
-            .button
-                margin: 5px
-    
+    @media only screen and (max-width: $mobile-device-width)
+        ul
+            grid-template-columns: initial
+            line-height: 20px
+            font-size: .8rem
+
+            li
+                z-index: 0
+                border: none
+                padding: 5px 0
+
+                .num
+                    +relative($top: initial)
+
+                    &::before
+                        content: ''
+                        z-index: -1
+                        +absolute($top: 10px, $left: -50%)
+                        width: 200%
+                        height: 1px
+                        background-color: $lightgray-color
+
+        .button
+            margin: 20px 0
+
 .services
     ul
         display: grid

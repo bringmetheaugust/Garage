@@ -30,18 +30,16 @@ block page
                 на левом берегу Киева.
             a(href="#consultation" class="button") Запросить консультацию?
 
-        //- section.workflow
-        //-     h2 Как мы работаем
-        //-     ul
+        section.workflow
+            h2 Как мы работаем
+            ul
 
-        //-         - var workflowList = require('../constants/workflow.json')
-        //-         each flow, key in workflowList
-        //-             li
-        //-                 .num= key + 1
-        //-                 .content #{flow}
-
-        //-                 if key == 0
-        //-                     a(href="#consultation" class="button") оставить заявку
+                - var workflowList = require('../constants/workflow.json')
+                each flow, key in workflowList
+                    li
+                        .num= '0' + (key + 1)
+                        .content #{flow}
+            a(href="#consultation" class="button dark") оставить заявку
 
         section.services
             a(name="services")
