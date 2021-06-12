@@ -1,3 +1,5 @@
+$ringDegrees: 10
+    
 .icon
     transition: fill .5s, stroke .5s
     cursor: pointer
@@ -22,3 +24,26 @@
 
         &:hover
             transform: rotate(-90deg)
+
+    &.call
+        stroke-width: 0
+        fill: $red-color
+
+        &:hover
+            animation: ring .3s linear
+
+@keyframes ring
+    0%
+        transform: rotate(0)
+    12%
+        transform: rotate(#{$ringDegrees}deg)
+    38%
+        transform: rotate(-#{$ringDegrees}deg)
+    50%
+        transform: rotate(0)
+    60%
+        transform: rotate(#{$ringDegrees / 2}deg)
+    90%
+        transform: rotate(-#{$ringDegrees / 2}deg)
+    100%
+        transform: rotate(0)
