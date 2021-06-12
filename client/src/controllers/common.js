@@ -3,6 +3,7 @@ const header = document.querySelector('header');
 const backgroundLogo = document.getElementById('b-logo');
 export const consultationFixed = document.getElementById('consulstation-fixed');
 export const ACTIVE_CLASS = 'active';
+// const SCROLLED_CLASS = 'scrolled';
 
 // * header background logo
 
@@ -16,6 +17,21 @@ document.getElementById('burger-menu').addEventListener('click', toggleItem.bind
         header.classList.contains(ACTIVE_CLASS) && toggleItem.call(header);
     });
 });
+
+// new IntersectionObserver(
+//     headerSectionCallback,
+//     {
+//         root: null,
+//         rootMargin: '0px',
+//         threshold: 0
+//     }
+// ).observe(header);
+
+// function headerSectionCallback(entries) {
+//     entries[0].isIntersecting ?
+//         header.classList.add(SCROLLED_CLASS) :
+//         header.classList.remove(SCROLLED_CLASS) ;
+// }
 
 // * fixed consultation
 

@@ -1,18 +1,16 @@
-const aboutSectionObserver = new IntersectionObserver(
+new IntersectionObserver(
     aboutSectionCallback,
     {
         root: null,
         rootMargin: '0px',
         threshold: 0
     }
-);
-
-aboutSectionObserver.observe(document.getElementById('about-slider'));
+).observe(document.getElementById('about-slider'));
 
 function aboutSectionCallback(entries) {
     entries[0].isIntersecting ?
         document.addEventListener('scroll', moveAboutSlider) :
-        document.removeEventListener('scroll', moveAboutSlider);
+        document.removeEventListener('scroll', moveAboutSlider) ;
 }
 
 function moveAboutSlider() {
