@@ -1,38 +1,38 @@
 [
 	{
-		"img": "https://uncrate.com/p/2018/11/viagra-boys-sports.jpg",
+		"img": "diagnostics.jpg",
 		"title": "Комплексная диагностика автомобилей"
 	},
 	{
-		"img": "https://media.resources.festicket.com/www/artists/ViagraBoys_UIBvzOm.jpg",
-		"title": "Замена технических жидкостей и фильтров"
-	},
-	{
-		"img": "https://static.tildacdn.com/tild6134-3739-4865-b332-326263663461/viagra-boys-intervie.jpg",
-		"title": "Ремонт и обслуживание тормозных систем"
-	},
-	{
-		"img": "https://i1.sndcdn.com/artworks-000469173756-rr99ij-t500x500.jpg",
-		"title": "Ремонт и бслуживание рулевого управления"
-	},
-	{
-		"img": "https://www.salonav.com/wp-content/uploads/2021/02/Viagra_03.jpg",
-		"title": "Ремонт и обслуживание ходовой части"
-	},
-	{
-		"img": "https://static-cdn.sr.se/images/4067/3db4f383-e3de-4a28-a1f6-d00a3c207f05.jpg?preset=1024x576",
+		"img": "clutch.png",
 		"title": "Система сцепления"
 	},
 	{
-		"img": "http://img.tradera.net/images/599/386982599_8bb7f423-d233-4a96-89d6-4f2dd2138d09.jpg",
+		"img": "brake.jpg",
+		"title": "Ремонт и обслуживание тормозных систем"
+	},
+	{
+		"img": "grm.jpg",
 		"title": "ГРМ двигатель"
 	},
 	{
-		"img": "https://newnoisemagazine.com/wp-content/uploads/2021/01/91A1610_BW_3000px_72DPI_SRGB-1024x683.jpg",
+		"img": "undercarriage.jpg",
+		"title": "Ремонт и обслуживание ходовой части"
+	},
+	{
+		"img": "steering.jpg",
+		"title": "Ремонт и бслуживание рулевого управления"
+	},
+	{
+		"img": "liquids.jpg",
+		"title": "Замена технических жидкостей и фильтров"
+	},
+	{
+		"img": "cooling.jpg",
 		"title": "Ремонт и обслуживание системы охлаждения"
 	},
 	{
-		"img": "https://media.gettyimages.com/photos/singer-sebastian-murphy-of-bamd-viagra-boys-performs-live-at-stage-picture-id1148877871",
+		"img": "others.jpg",
 		"title": "Другие виды работ"
 	}
 ]

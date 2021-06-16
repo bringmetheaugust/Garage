@@ -49,8 +49,7 @@ block page
                 - var serviceList = require('../constants/serviceList.json')
                 each service in serviceList
                     li.service
-                        img(src= service.img alt= service.title)
-                        // TODO - img(src= require('../media/services/' + service.img).default alt= service.title) for new images
+                        img(src= require('../media/services/' + service.img).default alt= service.title)
                         h3= service.title
 
         section.pricelist
