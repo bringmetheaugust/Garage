@@ -52,10 +52,19 @@ module.exports = {
 	},
 	plugins: [
 		new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }),
+		// main page
 		new HtmlWebpackPlugin({
+			filename: 'index.html',
 			template: './src/pages/main.pug',
 			favicon: './src/media/favicon.png',
 			inject: true
+		}),
+		// 404 page
+		new HtmlWebpackPlugin({
+			filename: '404.html',
+			template: './src/pages/404.pug',
+			favicon: './src/media/favicon.png',
+			inject: false
 		}),
 	],
 };
