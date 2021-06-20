@@ -5,7 +5,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 module.exports = {
 	entry: { name: './src/index.js' },
 	resolve: {
-        extensions: ['.ts', '.tsx', '.js', 'jsx', '.json', '.sass', '.scss']
+        extensions: ['.ts', '.js', '.json', '.sass', '.scss']
     },
 	module: {
 		rules: [
@@ -47,11 +47,7 @@ module.exports = {
 						}
 					},
 				],
-			},
-			// {
-            //     test: /\.svg/i,
-            //     use: { loader: 'svg-url-loader' }
-            // }
+			}
 		],
 	},
 	plugins: [

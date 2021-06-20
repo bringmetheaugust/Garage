@@ -1,4 +1,3 @@
-import './index.pug';
 import './styles/index.sass';
 
 import './controllers/common';
