@@ -3,6 +3,7 @@
 ## Description
 
 Web site about STO for cool guys.
+![Garage screen](./README_icon.png)
 
 ## Join
 
