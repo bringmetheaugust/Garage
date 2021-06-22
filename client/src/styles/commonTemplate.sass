@@ -1,19 +1,16 @@
-@import ./_reset
-@import ./_mixin
+@import './_mixin'
+@import './variables'
 @import ./_fonts
-@import ./_variables
 @import ./common/button
 @import ./common/input
 @import ./common/notification
 @import ./common/href
-@import ./common/curatin
+@import ./common/curtain
 @import ./common/icons
 
 @import ./components/header
 @import ./components/footer
 @import ./components/consultation
-
-@import ./pages/main
 
 html
     scroll-behavior: smooth
@@ -35,7 +32,7 @@ body
     img
         min-width: 100%
         min-height: 100px
-        background-image: url('../media/preloader.gif')
+        background-image: url('../../media/preloader.gif')
         background-position: center
 
     &.no-scroll

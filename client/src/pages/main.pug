@@ -1,4 +1,4 @@
-extends ../index.pug
+extends ../components/htmlTemplate
 include ../components/consultation
 
 block page
@@ -6,7 +6,12 @@ block page
         #about-slider
             ul#about-sliders
 
-                - var aboutUsSliders = require('../constants/aboutUsSlider.json')
+                -
+                    var aboutUsSliders = [
+                        ["7.jpg", "4.jpg", "2.jpg", "12.jpg"],
+                        ["5.jpg", "13.jpg", "14.jpg", "10.jpg", "11.jpg"],
+                        ["3.jpg", "6.jpg", "1.jpg", "8.jpg"]
+                    ]
                 each row in aboutUsSliders
                     li
                         each key in row
