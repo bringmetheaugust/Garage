@@ -7,10 +7,10 @@ const prodConfig = {
 	...config,
 	output: {
 		path: path.resolve(__dirname, '../../dist'),
-		filename: '[chunkhash].js',
+		filename: '[name].[hash].js',
 		publicPath: ''
 	},
-	output: [
+	plugins: [
 		...config.plugins,
 		new MiniCssExtractPlugin({
 			filename: '[name].[hash].css',

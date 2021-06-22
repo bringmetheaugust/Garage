@@ -1,9 +1,14 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const glob = require('glob');
 
 module.exports = {
-	entry: { name: './src/index.js' },
+	entry: {
+		main: './src/index.js',
+		css_reset: './src/styles/reset.css',
+		...mapFilenamesToEntries('./src/styles/pages/*')
+	},
 	resolve: {
         extensions: ['.ts', '.js', '.json', '.sass', '.scss']
     },
@@ -13,6 +18,14 @@ module.exports = {
                 test: /\.(ts|js)x?$/,
                 exclude: /(node_modules)/,
                 loader: "babel-loader",
+			},
+			{
+				test: /\.css$/,
+				use: [
+					MiniCssExtractPlugin.loader,
+					{ loader: 'css-loader' },
+					{ loader: 'postcss-loader' },
+				]
 			},
 			{
 				test: /\.(sass|scss)$/,
@@ -64,7 +77,15 @@ module.exports = {
 			filename: '404.html',
 			template: './src/pages/404.pug',
 			favicon: './src/media/favicon.png',
-			inject: false
+			inject: true
 		}),
 	],
 };
+
+function mapFilenamesToEntries(pattern) {
+	return glob.sync(pattern).reduce((entries, filename) => {
+		const [, name] = filename.match(/([^/]+)\.sass$/);
+
+		return ({ ...entries, [name]: filename });
+	}, {});
+}

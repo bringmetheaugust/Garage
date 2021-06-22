@@ -7,7 +7,7 @@ const devConfig = {
 	...config,
 	output: {
 		path: path.resolve(__dirname, './dist'),
-		filename: 'bundle.js',
+		filename: '[name].dev.js',
 		publicPath: '/'
 	},
 	devtool: 'source-map',
@@ -28,7 +28,10 @@ const devConfig = {
 	},
 	plugins: [
 		...config.plugins,
-		new MiniCssExtractPlugin()
+		new MiniCssExtractPlugin({
+			filename: '[name].dev.css',
+			chunkFilename: '[name].chunk.css'
+		})
 	],
 	mode: 'development'
 };
