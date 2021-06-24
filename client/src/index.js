@@ -1,3 +1,3 @@
-import './controllers/common';
-import './controllers/consultation';
-import './controllers/aboutUsSlider';
+import './controllers/common.js';
+import './controllers/consultation.js';
+import './controllers/aboutUsSlider.js';

@@ -1,12 +1,12 @@
-const path = require('path');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+import { resolve } from 'path';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 
-const config = require('./webpack.config.js');
+import config from './webpack.config.js';
 
-const prodConfig = {
+export default {
 	...config,
 	output: {
-		path: path.resolve(__dirname, '../../dist'),
+		path: resolve(resolve(), './dist'),
 		filename: '[name].[hash].js',
 		publicPath: ''
 	},
@@ -18,5 +18,3 @@ const prodConfig = {
 	],
 	mode: 'production'
 };
-
-module.exports = prodConfig;

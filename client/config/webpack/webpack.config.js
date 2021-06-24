@@ -1,11 +1,12 @@
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const glob = require('glob');
+import glob from 'glob';
+import { resolve } from 'path';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 
-module.exports = {
+export default {
 	entry: {
-		main: './src/index.js',
+		bundle: './src/index.js',
 		css_reset: './src/styles/reset.css',
 		...mapFilenamesToEntries('./src/styles/pages/*')
 	},
@@ -24,7 +25,14 @@ module.exports = {
 				use: [
 					MiniCssExtractPlugin.loader,
 					{ loader: 'css-loader' },
-					{ loader: 'postcss-loader' },
+					{
+						loader: 'postcss-loader',
+						options: {
+							postcssOptions: {
+								config: resolve(resolve(), "./config/postcss.config.cjs"),
+							},
+						}
+					},
 				]
 			},
 			{
@@ -32,7 +40,14 @@ module.exports = {
 				use: [
 					MiniCssExtractPlugin.loader,
 					{ loader: 'css-loader' },
-					{ loader: 'postcss-loader' },
+					{
+						loader: 'postcss-loader',
+						options: {
+							postcssOptions: {
+								config: resolve(resolve(), "./config/postcss.config.cjs"),
+							},
+						}
+					},
 					{ loader: 'sass-loader' }
 				]
 			},
@@ -65,27 +80,31 @@ module.exports = {
 	},
 	plugins: [
 		new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }),
-		// main page
-		new HtmlWebpackPlugin({
-			filename: 'index.html',
-			template: './src/pages/main.pug',
-			favicon: './src/media/favicon.png',
-			inject: true
-		}),
-		// 404 page
-		new HtmlWebpackPlugin({
-			filename: '404.html',
-			template: './src/pages/404.pug',
-			favicon: './src/media/favicon.png',
-			inject: true
-		}),
+		...mapPugPages('./src/pages/*')
 	],
 };
 
 function mapFilenamesToEntries(pattern) {
-	return glob.sync(pattern).reduce((entries, filename) => {
-		const [, name] = filename.match(/([^/]+)\.sass$/);
+	return glob.
+		sync(pattern).
+		reduce((entries, file) => {
+			const [, name] = file.match(/([^/]+)\.sass$/);
 
-		return ({ ...entries, [name]: filename });
-	}, {});
+			return ({ ...entries, [name]: file });
+		}, {});
+}
+
+function mapPugPages(pattern) {
+	return glob.
+		sync(pattern).
+		map(file => {
+			const [, name] = file.match(/([^/]+)\.pug$/);
+
+			return new HtmlWebpackPlugin({
+				filename: `${name}.html`,
+				template: file,
+				favicon: './src/media/favicon.png',
+				inject: true
+			})
+		});
 }
