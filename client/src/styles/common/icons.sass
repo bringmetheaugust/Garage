@@ -1,4 +1,6 @@
-$ringDegrees: 10
+@use "sass:math"
+    
+$ringDegrees: 10deg
     
 .icon
     transition: fill .5s, stroke .5s
@@ -36,14 +38,14 @@ $ringDegrees: 10
     0%
         transform: rotate(0)
     12%
-        transform: rotate(#{$ringDegrees}deg)
+        transform: rotate($ringDegrees)
     38%
-        transform: rotate(-#{$ringDegrees}deg)
+        transform: rotate(-$ringDegrees)
     50%
         transform: rotate(0)
     60%
-        transform: rotate(#{$ringDegrees / 2}deg)
+        transform: rotate(math.div($ringDegrees ,2))
     90%
-        transform: rotate(-#{$ringDegrees / 2}deg)
+        transform: rotate(math.div($ringDegrees, 2))
     100%
         transform: rotate(0)

@@ -1,5 +1,5 @@
 import Notification from './notification.js';
-import { consultationFixed, toggleCurtain, ACTIVE_CLASS } from './common';
+import { consultationFixed, toggleCurtain, ACTIVE_CLASS } from './common.js';
 
 [ ...document.querySelectorAll('.consultation-form') ].forEach(form => {
     form.addEventListener('submit', sendForm);

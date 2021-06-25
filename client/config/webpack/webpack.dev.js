@@ -1,13 +1,13 @@
-const path = require('path');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+import { resolve } from 'path';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 
-const config = require('./webpack.config.js');
+import config from './webpack.config.js';
 
-const devConfig = {
+export default {
 	...config,
 	output: {
-		path: path.resolve(__dirname, './dist'),
-		filename: '[name].dev.js',
+		path: resolve(resolve(), './dist'),
+		filename: '[name].js',
 		publicPath: '/'
 	},
 	devtool: 'source-map',
@@ -29,11 +29,9 @@ const devConfig = {
 	plugins: [
 		...config.plugins,
 		new MiniCssExtractPlugin({
-			filename: '[name].dev.css',
+			filename: '[name].css',
 			chunkFilename: '[name].chunk.css'
 		})
 	],
 	mode: 'development'
 };
-
-module.exports = devConfig;
