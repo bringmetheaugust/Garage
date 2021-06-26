@@ -1,12 +1,14 @@
+- var trans = htmlWebpackPlugin.options.content.header
+
 header
     .header-wrap
         span.logo Garage
         noindex#b-logo Garage
         nav
             ul
-                li: a(href="#services") услуги
-                li: a(href="#pricelist") цены
-                li: a(href="#contacts") контакты
+                li: a(href="#services") #{trans.nav.services}
+                li: a(href="#pricelist") #{trans.nav.pricelist}
+                li: a(href="#contacts") #{trans.nav.contacts}
                 //- li: a(href="#reviews") отзывы
         #burger-menu
             .line

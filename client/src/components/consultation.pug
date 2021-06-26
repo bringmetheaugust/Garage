@@ -1,19 +1,21 @@
 include ./icons/close
 
 mixin consultation(withHref = false)
+    - var trans = htmlWebpackPlugin.options.content.consultation
+
     .consultation
         if withHref
             a(name="consultation")
 
-        h2 Запросить консультацию
+        h2 #{trans.title}
         form.consultation-form
             input#consultation-tel(
                 type="tel"
-                placeholder="телефон *"
+                placeholder=trans.form.tel + " *"
                 required pattern="[0-9]{9,12}"
             )
-            input#consultation-name(placeholder="имя" type="text")
-            button запросить
+            input#consultation-name(placeholder=trans.form.name type="text")
+            button #{trans.request}
 
 mixin consultation-fixed()
     #consulstation-fixed

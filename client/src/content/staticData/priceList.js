@@ -1,4 +1,4 @@
-[
+export default [
 	{
 		"title": "Диагностика",
 		"list": [
