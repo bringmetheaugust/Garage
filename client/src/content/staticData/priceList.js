@@ -1,174 +1,37 @@
-export default [
-	{
-		"title": "Диагностика",
-		"list": [
-			{
-				"title": "Комплексная диагностика",
-				"price": { "val": 300, "fixed": true },
-				"items": [
-					"Ходовая часть / Амортизация",
-					"Тормозная система",
-					"Навесное оборудование",
-					"Жидкости",
-					"Подтекания"
-				]
-			},
-			{
-				"title": "Предпрожная диагностика",
-				"price": { "val": 600, "fixed": true }
-			},
-			{
-				"title": "Диагностика лакокрасочного покрытия",
-				"price": { "val": 150, "fixed": true }
-			}
-		]
-	},
-	{
-		"title": "Замена жидкостей и фильтров",
-		"list": [
-			{
-				"title": "Замена масла ДВС",
-				"price": { "val": 200, "fixed": false }
-			},
-			{
-				"title": "Замена масла МКПП",
-				"price": { "val": 150, "fixed": true }
-			},
-			{
-				"title": "Замена масла АКПП",
-				"price": { "val": 300, "fixed": false }
-			},
-			{
-				"title": "Замена воздушного фильтра",
-				"price": { "val": 100, "fixed": false }
-			},
-			{
-				"title": "Замена фильтра салона",
-				"price": { "val": 100, "fixed": false }
-			},
-			{
-				"title": "Замена бензинового топливного фильтра",
-				"price": { "val": 150, "fixed": false }
-			},
-			{
-				"title": "Замена топливного фильтра дизель",
-				"price": { "val": 250, "fixed": false }
-			},
-			{
-				"title": "Замена масла в роздаточной коробке",
-				"price": { "val": 100, "fixed": true }
-			},
-			{
-				"title": "Замена масла в мостах",
-				"price": { "val": 150, "fixed": true }
-			},
-			{
-				"title": "Замена жидкости системы охлаждения",
-				"price": { "val": 250, "fixed": false }
-			},
-			{
-				"title": "Смазка 1 крестовины кардана",
-				"price": { "val": 100, "fixed": true }
-			}
-		]
-	},
-	{
-		"title": "Тормозная система",
-		"list": [
-			{
-				"title": "Замена тормозного шланга",
-				"price": { "val": 200, "fixed": true }
-			},
-			{
-				"title": "Замена тормозных колодок дисковых с чисткой и смазкой направляющих ось",
-				"price": { "val": 300, "fixed": true }
-			},
-			{
-				"title": "Замена тормозных колодок барабанных (комплект)",
-				"price": { "val": 650, "fixed": false }
-			},
-			{
-				"title": "Регулировка ручного тормоза",
-				"price": { "val": 150, "fixed": false }
-			},
-			{
-				"title": "Замена троса ручника 1шт.",
-				"price": { "val": 250, "fixed": false }
-			},
-			{
-				"title": "Замена ремкомплкта суппорта 1 поршень",
-				"price": { "val": 450, "fixed": false }
-			},
-			{
-				"title": "Замена главного тормозного цилиндра",
-				"price": { "val": 800, "fixed": false }
-			},
-			{
-				"title": "Замена тормозных дисков ось",
-				"price": { "val": 500, "fixed": true }
-			},
-			{
-				"title": "Замена тормозной жидкости",
-				"price": { "val": 600, "fixed": true }
-			}
-		]
-	},
-	{
-		"title": "Рулевое управление",
-		"list": [
-			{
-				"title": "Замена рулевого наконечника",
-				"price": { "val": 200, "fixed": true }
-			},
-			{
-				"title": "Замена рулевых тяг и наконечников (комплект)",
-				"price": { "val": 750, "fixed": true }
-			}
-		]
-	},
-	{
-		"title": "Ходовая часть",
-		"list": [
-			{
-				"title": "Замена стойки стабилизатора",
-				"price": { "val": 150, "fixed": true }
-			},
-			{
-				"title": "Замена втулки стабилизатора 1шт.",
-				"price": { "val": 200, "fixed": true }
-			},
-			{
-				"title": "Снятие и установка рычага",
-				"price": { "val": 150, "fixed": false }
-			},
-			{
-				"title": "Точка переприсовки сайлентблока 1шт.",
-				"price": { "val": 50, "fixed": false }
-			},
-			{
-				"title": "Замена шаровой опоры",
-				"price": { "val": 150, "fixed": false }
-			},
-			{
-				"title": "Замена ступичного подшибника",
-				"price": { "val": 550, "fixed": false }
-			},
-			{
-				"title": "Замена переднего амортизатора",
-				"price": { "val": 100, "fixed": false }
-			},
-			{
-				"title": "Замена заднего амортизатора",
-				"price": { "val": 250, "fixed": false }
-			},
-			{
-				"title": "Замена ШРУСа",
-				"price": { "val": 450, "fixed": false }
-			},
-			{
-				"title": "Замена пыльника ШРУСа",
-				"price": { "val": 450, "fixed": false }
-			}
-		]
-	}
-]
+export default {
+	id_0001: { val: 300, fixed: true },
+	id_0002: { val: 600, fixed: true },
+	id_0003: { val: 150, fixed: true },
+	id_0004: { val: 200, fixed: false },
+	id_0005: { val: 150, fixed: true },
+	id_0006: { val: 300, fixed: false },
+	id_0007: { val: 100, fixed: false },
+	id_0008: { val: 100, fixed: false },
+	id_0009: { val: 150, fixed: false },
+	id_0010: { val: 250, fixed: false },
+	id_0011: { val: 100, fixed: true },
+	id_0012: { val: 150, fixed: true },
+	id_0013: { val: 250, fixed: false },
+	id_0014: { val: 100, fixed: true },
+	id_0015: { val: 200, fixed: true },
+	id_0016: { val: 300, fixed: true },
+	id_0017: { val: 650, fixed: false },
+	id_0018: { val: 150, fixed: false },
+	id_0019: { val: 250, fixed: false },
+	id_0020: { val: 450, fixed: false },
+	id_0021: { val: 800, fixed: false },
+	id_0022: { val: 500, fixed: true },
+	id_0023: { val: 600, fixed: true },
+	id_0024: { val: 200, fixed: true },
+	id_0025: { val: 750, fixed: true },
+	id_0026: { val: 150, fixed: true },
+	id_0027: { val: 200, fixed: true },
+	id_0028: { val: 150, fixed: false },
+	id_0029: { val: 50, fixed: false },
+	id_0030: { val: 150, fixed: false },
+	id_0031: { val: 550, fixed: false },
+	id_0032: { val: 100, fixed: false },
+	id_0033: { val: 250, fixed: false },
+	id_0034: { val: 450, fixed: false },
+	id_0035: { val: 450, fixed: false },
+}
