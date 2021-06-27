@@ -9,8 +9,8 @@ import ua from '../../src/content/translates/ua.js';
 
 export default {
 	entry: {
-		bundle: './src/index.js',
 		css_reset: './src/styles/reset.css',
+		bundle: './src/index.js',
 		// ...mapFilenamesToEntries('./src/styles/pages/*') // ? for multi css files
 	},
 	resolve: {
@@ -89,7 +89,8 @@ export default {
 				template: './src/pages/index.pug',
 				favicon: './src/media/favicon.png',
 				inject: 'body',
-				content: translates
+				content: translates,
+				lang: translates.lang
 			})
 		))
 		// ...mapPugPages('./src/pages/*') // ? for multi Pug pages
