@@ -1,14 +1,17 @@
-import glob from 'glob';
+// import glob from 'glob';
 import { resolve } from 'path';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 
+import ru from '../../src/content/translates/ru.js';
+import ua from '../../src/content/translates/ua.js';
+
 export default {
 	entry: {
 		bundle: './src/index.js',
 		css_reset: './src/styles/reset.css',
-		...mapFilenamesToEntries('./src/styles/pages/*')
+		// ...mapFilenamesToEntries('./src/styles/pages/*') // ? for multi css files
 	},
 	resolve: {
         extensions: ['.ts', '.js', '.json', '.sass', '.scss']
@@ -80,31 +83,45 @@ export default {
 	},
 	plugins: [
 		new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }),
-		...mapPugPages('./src/pages/*')
-	],
+		...[ ru, ua ].map(translates => (
+			new HtmlWebpackPlugin({
+				filename: `${translates.lang}/index.html`,
+				template: './src/pages/index.pug',
+				favicon: './src/media/favicon.png',
+				inject: 'body',
+				content: translates
+			})
+		))
+		// ...mapPugPages('./src/pages/*') // ? for multi Pug pages
+	]
 };
 
-function mapFilenamesToEntries(pattern) {
-	return glob.
-		sync(pattern).
-		reduce((entries, file) => {
-			const [, name] = file.match(/([^/]+)\.sass$/);
+// ? for multi css files
+// function mapFilenamesToEntries(pattern) {
+// 	return glob.
+// 		sync(pattern).
+// 		reduce((entries, file) => {
+// 			const [, name] = file.match(/([^/]+)\.sass$/);
 
-			return ({ ...entries, [name]: file });
-		}, {});
-}
+// 			return ({ ...entries, [name]: file });
+// 		}, {});
+// }
 
-function mapPugPages(pattern) {
-	return glob.
-		sync(pattern).
-		map(file => {
-			const [, name] = file.match(/([^/]+)\.pug$/);
+// ? for multi Pug pages
+// function mapPugPages(pattern) {
+// 	return glob.
+// 		sync(pattern).
+// 		map(file => {
+// 			const [, name] = file.match(/([^/]+)\.pug$/);
 
-			return new HtmlWebpackPlugin({
-				filename: `${name}.html`,
-				template: file,
-				favicon: './src/media/favicon.png',
-				inject: true
-			})
-		});
-}
+// 			return new HtmlWebpackPlugin({
+// 				filename: `${name}.html`,
+// 				template: file,
+// 				favicon: './src/media/favicon.png',
+// 				inject: true,
+// 				env: {
+// 					lol: 'lol'
+// 				}
+// 			})
+// 		});
+// }

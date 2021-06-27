@@ -39,7 +39,7 @@ block page
             h2 Как мы работаем
             ul
 
-                - var workflowList = require('../constants/workflow.json')
+                - var workflowList = htmlWebpackPlugin.options.content.workflow
                 each flow, key in workflowList
                     li
                         .num= '0' + (key + 1)
@@ -51,7 +51,7 @@ block page
             h2 Услуги
             ul
 
-                - var serviceList = require('../constants/serviceList.json')
+                - var serviceList = htmlWebpackPlugin.options.content.serviceList
                 each service in serviceList
                     li.service
                         img(src= require('../media/services/' + service.img).default alt= service.title)
@@ -62,7 +62,7 @@ block page
             h2 Цены
             ul
 
-                - var priceList = require('../constants/priceList.json')
+                - var priceList = htmlWebpackPlugin.options.content.priceList
                 each priceCategory in priceList
                     li.price-category
                         h3= priceCategory.title
