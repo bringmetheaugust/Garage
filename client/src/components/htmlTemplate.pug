@@ -5,6 +5,10 @@ html(lang="ru")
         meta(http-equiv="X-UA-Compatible", content="IE=edge")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         title Garage
+
+        //- title - СТО Позняки | СТО Garage
+        //- description - СТО На Позняках. Замена Масла. Замена Ремня ГРМ.
+        //- Диагностика Двигателя. Ремонт Двигателя. Диагностика ходовой
     body
         include ./header
         block page
@@ -12,3 +16,12 @@ html(lang="ru")
         +consultation-fixed()
         noindex#notifications
         noindex#curtain
+        //- Global site tag (gtag.js) - Google Analytics
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0F9XW4JMJW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-0F9XW4JMJW');
+</script>
