@@ -19,6 +19,7 @@ export default {
 			rewrites: [
 				{ from: /./, to: '/404.html' },
 			],
+			index: '/404.html'
 		},
 		port: 2100,
 		hot: true,
