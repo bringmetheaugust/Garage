@@ -17,11 +17,9 @@ html(lang="ru")
         noindex#notifications
         noindex#curtain
         //- Global site tag (gtag.js) - Google Analytics
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-0F9XW4JMJW"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-0F9XW4JMJW');
-</script>
+        script(async src="https://www.googletagmanager.com/gtag/js?id=G-0F9XW4JMJW")
+        script.
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-0F9XW4JMJW');
