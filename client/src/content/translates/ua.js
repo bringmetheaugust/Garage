@@ -2,6 +2,10 @@ import mapTranslate from '../mapTranslate.js';
 
 export default mapTranslate({
     lang: 'ua',
+    head : {
+        title: 'СТО Позняки',
+        description: 'СТО На Позняках. Замiна Масла. Замiна Ремня ГРМ. Дiагностика Двигуна. Ремонт Двигуна. Дiагностика ходової'
+    },
     serviceList: {
         diagnostics: "Комплексна діагностика автомобілів",
         clutch: "Систима щеплення",
