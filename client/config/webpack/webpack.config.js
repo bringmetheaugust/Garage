@@ -4,8 +4,7 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 
-import ru from '../../src/content/translates/ru.js';
-import ua from '../../src/content/translates/ua.js';
+import { ruTranslate, uaTranslate } from '../../src/content/index.js';
 
 export default {
 	entry: {
@@ -83,7 +82,7 @@ export default {
 	},
 	plugins: [
 		new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }),
-		...[ ru, ua ].map(translates => (
+		...[ ruTranslate, uaTranslate ].map(translates => (
 			new HtmlWebpackPlugin({
 				filename: `${translates.lang}/index.html`,
 				template: './src/pages/index.pug',

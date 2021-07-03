@@ -1,7 +1,8 @@
 - var trans = htmlWebpackPlugin.options.content.head
+- var lang = htmlWebpackPlugin.options.content.lang
 
 doctype html
-html(lang="ru")
+html(lang= lang)
     head
         meta(charset="UTF-8")
         meta(http-equiv="X-UA-Compatible", content="IE=edge")
