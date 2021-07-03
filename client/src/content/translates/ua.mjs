@@ -1,6 +1,6 @@
-import mapTranslate from '../mapTranslate.js';
 
-export default mapTranslate({
+
+export default {
     lang: 'ua',
     head : {
         title: 'СТО Позняки',
@@ -117,4 +117,4 @@ export default mapTranslate({
             since: 'працюємо з 2018'
         }
     }
-});
+}

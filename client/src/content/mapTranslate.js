@@ -1,7 +1,13 @@
-import staticServiceList from './staticData/serviceList.js';
-import staticPriceList from './staticData/priceList.js';
+import staticServiceList from './staticData/serviceList.mjs';
+import staticPriceList from './staticData/priceList.mjs';
 
-export default function mapTranslate(translate) {
+import ua from './translates/ua.mjs';
+import ru from './translates/ru.mjs';
+
+export const uaTranslate = mapTranslate(ua);
+export const ruTranslate = mapTranslate(ru);
+
+function mapTranslate(translate) {
     const { serviceList, priceList } = translate;
 
     return ({
