@@ -4,7 +4,7 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 
-import { ruTranslate, uaTranslate } from '../../src/content/mapTranslate.js';
+import { ruTranslate, uaTranslate } from '../../src/content/index.js';
 
 export default {
 	entry: {
