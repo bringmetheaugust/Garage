@@ -8,15 +8,28 @@ footer
             a(
                 href="https://goo.gl/maps/d6SxKfmxbQQq5K948"
                 target="_blank"
+                rel="noopener"
             ) #{trans.lookOnGmap}
         ul.tel
             li: a.tel(href="tel:+380636027513") +380 63 602 75 13
             li: a.tel(href="tel:+380931195607") +380 93 119 56 07
         ul.soc
-            li: a(href="https://telegram.me/jack_malbon" target="_blank")
-                include ../components/icons/telegram
-            li: a(href="https://www.instagram.com/tkachenko.maksym1/" target="_blank")
-                include ../components/icons/instagram
+            li
+                a(
+                    href="https://telegram.me/jack_malbon"
+                    target="_blank"
+                    rel="noopener"
+                    aria-label="our telegram"
+                )
+                    include ../components/icons/telegram
+            li
+                a(
+                    href="https://www.instagram.com/tkachenko.maksym1/"
+                    target="_blank"
+                    rel="noopener"
+                    aria-label="our instagram"
+                )
+                    include ../components/icons/instagram
     .floor
         div #{trans.floor.geo}
         div Garage

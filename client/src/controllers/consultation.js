@@ -14,8 +14,8 @@ async function sendForm(e) {
             method: 'POST',
             headers: { 'Content-type': 'application/json' },
             body: JSON.stringify({
-                phone: document.getElementById('consultation-tel').value,
-                name: document.getElementById('consultation-name').value
+                phone: target[0].value,
+                name: target[1].value
             })
         });
 

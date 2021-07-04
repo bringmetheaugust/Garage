@@ -1,14 +1,14 @@
 - var trans = htmlWebpackPlugin.options.content.head
-- var lang = htmlWebpackPlugin.options.content.lang
+- var htmlLang = htmlWebpackPlugin.options.content.htmlLang
 
 doctype html
-html(lang= lang)
+html(lang= htmlLang)
     head
         meta(charset="UTF-8")
         meta(http-equiv="X-UA-Compatible", content="IE=edge")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         title= trans.title + ' | СТО Garage'
-        meta(type="description" content= trans.description)
+        meta(name="description" content= trans.description)
     body
         include ./header
         block page
@@ -19,7 +19,7 @@ html(lang= lang)
         //- Global site tag (gtag.js) - Google Analytics
         script(async src="https://www.googletagmanager.com/gtag/js?id=G-0F9XW4JMJW")
         script.
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-0F9XW4JMJW');
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-0F9XW4JMJW');

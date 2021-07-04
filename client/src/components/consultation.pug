@@ -9,12 +9,12 @@ mixin consultation(withHref = false)
 
         h2 #{trans.title}
         form.consultation-form
-            input#consultation-tel(
+            input.consultation-tel(
                 type="tel"
                 placeholder=trans.form.tel + " *"
                 required pattern="[0-9]{9,12}"
             )
-            input#consultation-name(placeholder=trans.form.name type="text")
+            input.consultation-name(placeholder=trans.form.name type="text")
             button #{trans.request}
 
 mixin consultation-fixed()
