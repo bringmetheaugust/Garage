@@ -82,6 +82,12 @@ export default {
         form: {
             tel: 'телефон',
             name: 'ім\'я'
+        },
+        notifications: {
+            call_request_success: 'Ваший запит вiдправлений. Наш спецiалiст скоро з Вами зв\'яжеться',
+            unknown_error: 'Вибачте, сталась помилка',
+            call_request_invalid_data_error: 'Невiрно вказанi данi',
+            call_request_spam_error: 'Ви вже вiдправляли запит<br>Спробуйте ще раз через 10 хвилин'
         }
     },
     footer: {

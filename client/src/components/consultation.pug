@@ -8,7 +8,12 @@ mixin consultation(withHref = false)
             a(name="consultation")
 
         h2 #{trans.title}
-        form.consultation-form
+        form.consultation-form(
+            data-trans-success= trans.notifications.call_request_success
+            data-trans-unknown-error= trans.notifications.unknown_error
+            data-trans-invalid-data-error= trans.notifications.call_request_invalid_data_error
+            data-trans-spam-error= trans.notifications.call_request_spam_error
+        )
             input.consultation-tel(
                 type="tel"
                 placeholder=trans.form.tel + " *"
