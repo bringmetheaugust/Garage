@@ -29,15 +29,15 @@ block page
                                 )
 
         section.about
-            h2= content.aboutUsTitle
+            h2= content.aboutUs.title
             div= content.aboutUs.text
             a(href="#consultation" class="button gray") #{content.consultation.title}?
 
         section.workflow
-            h2= content.workflowTitle
+            h2= content.workflow.title
             ul
 
-                - var workflowList = content.workflow
+                - var workflowList = content.workflow.list
                 each flow, key in workflowList
                     li
                         .num= '0' + (key + 1)
@@ -46,10 +46,10 @@ block page
 
         section.services
             a(name="services")
-            h2= content.serviceTitle
+            h2= content.service.title
             ul
 
-                - var serviceList = content.serviceList
+                - var serviceList = content.service.list
                 each service in serviceList
                     li.service
                         picture
@@ -66,10 +66,10 @@ block page
 
         section.pricelist
             a(name="pricelist")
-            h2= content.priceTitle
+            h2= content.price.title
             ul
 
-                - var priceList = content.priceList
+                - var priceList = content.price.list
                 each priceCategory in priceList
                     li.price-category
                         h3= priceCategory.title

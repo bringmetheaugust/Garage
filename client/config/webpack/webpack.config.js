@@ -90,7 +90,13 @@ export default {
 				content: translates,
 				lang: translates.lang
 			})
-		))
+		)),
+		new HtmlWebpackPlugin({
+			filename: '404.html',
+			template: './src/pages/404.pug',
+			favicon: './src/media/favicon.png',
+			inject: 'body'
+		})
 		// ...mapPugPages('./src/pages/*') // ? for multi Pug pages
 	]
 };
