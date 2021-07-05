@@ -2,6 +2,8 @@ extends ../components/htmlTemplate
 include ../components/consultation
 
 block page
+    - var content = htmlWebpackPlugin.options.content
+
     main
         #about-slider
             ul#about-sliders
@@ -15,54 +17,59 @@ block page
                 each row in aboutUsSliders
                     li
                         each key in row
-                            img(src=require('../media/about_slider/' + key).default alt='СТО ремонт')
+                            picture
+                                source(
+                                    srcset=require('../media/about_slider/mobile/' + key).default
+                                    media="(max-width: 768px)"
+                                )
+                                img(
+                                    src=require('../media/about_slider/desktop/' + key).default
+                                    alt='СТО ремонт'
+                                    loading="lazy"
+                                )
 
         section.about
-            h2 О нас
-            div.
-                Это ворованный текст из какой-то всратой СТО. А еще у каштана 180 хромосом, но это не доказанно.
-                Автосервис «КиївСхід» предоставляет полный спектр услуг по ремонту автомобилей в Киеве!
-                Мы занимаемся полным циклом профессионального техобслуживания автомобиля, охватывающий все узлы,
-                а также системы Вашего автомобиля. Мы готовы к решению нестандартных ситуаций, найдем решение любой
-                проблемы. Мы дорожим своей репутацией и уверены: обратившись к нам, вы перестанете искать идеальный
-                автосервис. Оценка состояния Вашего авто на нашем СТО «КиївСхід» в Дарницком районе Киева не займет
-                много времени, зато поможет выявить дефекты или поломки, в дальнейшем способные стать причиной
-                серьезных неисправностей в работе автомобиля. Одной из самых распространенных причин
-                дорожно-транспортных происшествий на дорогах Киева по-прежнему остается техническая
-                неисправность автомобиля, хотя в последние годы наблюдается тенденция по уменьшению
-                процента аварий из-за поломок машин. Это значит, что все больше и больше водителей осознают
-                необходимость и важность профилактического обслуживания своего автомобиля на качественных сто
-                на левом берегу Киева.
-            a(href="#consultation" class="button gray") Запросить консультацию?
+            h2= content.aboutUsTitle
+            div= content.aboutUs.text
+            a(href="#consultation" class="button gray") #{content.consultation.title}?
 
         section.workflow
-            h2 Как мы работаем
+            h2= content.workflowTitle
             ul
 
-                - var workflowList = htmlWebpackPlugin.options.content.workflow
+                - var workflowList = content.workflow
                 each flow, key in workflowList
                     li
                         .num= '0' + (key + 1)
                         .content #{flow}
-            a(href="#consultation" class="button white") оставить заявку
+            a(href="#consultation" class="button white")= content.consultation.leftRequest
 
         section.services
             a(name="services")
-            h2 Услуги
+            h2= content.serviceTitle
             ul
 
-                - var serviceList = htmlWebpackPlugin.options.content.serviceList
+                - var serviceList = content.serviceList
                 each service in serviceList
                     li.service
-                        img(src= require('../media/services/' + service.img).default alt= service.title)
+                        picture
+                            source(
+                                srcset=require('../media/services/mobile/' + service.img).default
+                                media="(max-width: 768px)"
+                            )
+                            img(
+                                src= require('../media/services/desktop/' + service.img).default
+                                alt= service.title
+                                loading="lazy"
+                            )
                         h3= service.title
 
         section.pricelist
             a(name="pricelist")
-            h2 Цены
+            h2= content.priceTitle
             ul
 
-                - var priceList = htmlWebpackPlugin.options.content.priceList
+                - var priceList = content.priceList
                 each priceCategory in priceList
                     li.price-category
                         h3= priceCategory.title

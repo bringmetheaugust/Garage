@@ -8,7 +8,6 @@ import { ruTranslate, uaTranslate } from '../../src/content/index.js';
 
 export default {
 	entry: {
-		css_reset: './src/styles/reset.css',
 		bundle: './src/index.js',
 		// ...mapFilenamesToEntries('./src/styles/pages/*') // ? for multi css files
 	},
