@@ -7,7 +7,7 @@ Web site about STO for cool guys.
 
 ## Join
 
- * **remote test**: https://garage.fedorenka.online
+ * **remote test**: https://garagehub.site
 
 ## Deploy
 
