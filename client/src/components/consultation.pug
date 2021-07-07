@@ -8,13 +8,18 @@ mixin consultation(withHref = false)
             a(name="consultation")
 
         h2 #{trans.title}
-        form.consultation-form
-            input#consultation-tel(
+        form.consultation-form(
+            data-trans-success= trans.notifications.call_request_success
+            data-trans-unknown-error= trans.notifications.unknown_error
+            data-trans-invalid-data-error= trans.notifications.call_request_invalid_data_error
+            data-trans-spam-error= trans.notifications.call_request_spam_error
+        )
+            input.consultation-tel(
                 type="tel"
                 placeholder=trans.form.tel + " *"
                 required pattern="[0-9]{9,12}"
             )
-            input#consultation-name(placeholder=trans.form.name type="text")
+            input.consultation-name(placeholder=trans.form.name type="text")
             button #{trans.request}
 
 mixin consultation-fixed()

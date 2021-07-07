@@ -8,7 +8,6 @@ import { ruTranslate, uaTranslate } from '../../src/content/index.js';
 
 export default {
 	entry: {
-		css_reset: './src/styles/reset.css',
 		bundle: './src/index.js',
 		// ...mapFilenamesToEntries('./src/styles/pages/*') // ? for multi css files
 	},
@@ -91,7 +90,13 @@ export default {
 				content: translates,
 				lang: translates.lang
 			})
-		))
+		)),
+		new HtmlWebpackPlugin({
+			filename: '404.html',
+			template: './src/pages/404.pug',
+			favicon: './src/media/favicon.png',
+			inject: 'body'
+		})
 		// ...mapPugPages('./src/pages/*') // ? for multi Pug pages
 	]
 };

@@ -38,6 +38,9 @@ main
             margin: $slider-gap-desktop
             transition: transform .5s ease-out
 
+            picture
+                height: inherit
+
             img
                 min-width: 200px
                 height: inherit
@@ -49,6 +52,9 @@ main
             grid-gap: $slider-gap-mobile
             height: 100px
             margin: $slider-gap-mobile
+
+            picture
+                height: inherit
 
             img
                 min-width: 50px
@@ -159,7 +165,6 @@ main
                 .fixed-price
                     margin: 0 5px
                     font-size: .7rem
-                    color: gray
 
     @media only screen and (max-width: $mobile-device-width)
         .price-category
