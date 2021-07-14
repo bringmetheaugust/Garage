@@ -8,7 +8,7 @@ export default {
 	output: {
 		path: resolve(resolve(), './dist'),
 		filename: '[name].[hash].js',
-		publicPath: ''
+		publicPath: '../'
 	},
 	plugins: [
 		...config.plugins,
