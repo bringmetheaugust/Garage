@@ -1,3 +1,13 @@
-.not-found
-    .title страницу не найдено
-    a(href="/") вернуться на главную
+- var trans = htmlWebpackPlugin.options.content
+- var htmlLang = htmlWebpackPlugin.options.content.htmlLang
+
+doctype html
+html(lang= htmlLang)
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title 404 | СТО Garage
+    body
+        .not-found
+            .title= trans.notFound.title
+            a(href='/' + trans.lang)= trans.notFound.backLink

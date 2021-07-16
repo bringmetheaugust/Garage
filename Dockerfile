@@ -1,10 +1,15 @@
+#TODO доделать двуслойный контейнер с node-alpine:14.15.3
+
 FROM nginx:1.14
 
-# nginx configurations are added by docker volumes
+ENV TELEGRAM_CHAT_ID=-XXXXXXXXXX
 
-ENV TELEGRAM_CHAT_ID=-279746682
+COPY ./nginx/nginx.conf /etc/nginx/
+COPY ./nginx/garage.conf /etc/nginx/conf.d/
 
 WORKDIR /app
+
+COPY ./server .
 
 RUN apt-get update && \
     apt-get install -y curl && \
@@ -14,4 +19,4 @@ RUN apt-get update && \
 
 EXPOSE 80
 
-CMD service nginx start & yarn --cwd /app/server dev & yarn --cwd /app/client dev
+CMD service nginx start && yarn --cwd /app/server prod

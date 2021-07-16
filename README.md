@@ -11,15 +11,19 @@ Web site about STO for cool guys.
 
 ## Deploy
 
- * ### local by Docker🐳
+ * ### localy
 
-    * `make build_dev` to build docker image
-    * `make run_dev` to start container
-    * open http://localhost:80
+    * `cd client && yarn dev` to run client on http://localhost:2100
+    * `cd server && yarn dev` to run server on http://localhost:2101
 
- * ### remote test
+    ###### Required global packages:
 
-    * push changes to `test` branch and watch [actions](https://github.com/FedorenkaAvenue/Garage/actions) result
+      * *NodeJS v14.17.0*
+      * *yarn v1+*
+
+ * ### remote production
+
+    * push changes to `production` branch and watch [actions](https://github.com/FedorenkaAvenue/Garage/actions) result
 
 ## Docs
 
