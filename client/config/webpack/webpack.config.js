@@ -61,7 +61,10 @@ export default {
 				use: [
 					{
 						loader: 'file-loader',
-						options:{ name: '[name].[ext]' }
+						options: {
+							name: 'fonts/[name].[hash:5].[ext]',
+							publicPath: './'
+						}
 					}
 				]
 			},
