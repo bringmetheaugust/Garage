@@ -94,12 +94,16 @@ export default {
 				lang: translates.lang
 			})
 		)),
-		new HtmlWebpackPlugin({
-			filename: '404.html',
-			template: './src/pages/404.pug',
-			favicon: './src/media/favicon.png',
-			inject: 'body'
-		})
+		...[ ruTranslate, uaTranslate ].map(translates => (
+			new HtmlWebpackPlugin({
+				filename: `${translates.lang}/404.html`,
+				template: './src/pages/404.pug',
+				favicon: './src/media/favicon.png',
+				inject: 'body',
+				content: translates,
+				lang: translates.lang
+			})
+		)),
 		// ...mapPugPages('./src/pages/*') // ? for multi Pug pages
 	]
 };

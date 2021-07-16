@@ -18,7 +18,7 @@ async function sendForm(e) {
     const { target } = e;
     
     try {
-        const { ok, status } = await fetch('http://localhost:2101/api/callme', {
+        const { ok, status } = await fetch('/api/callme', {
             method: 'POST',
             headers: { 'Content-type': 'application/json' },
             body: JSON.stringify({

@@ -6,7 +6,10 @@ type ICallRequest = {
     phone: string
 }
 
-const { TELEGRAM_TOKEN, TELEGRAM_CHAT_ID } = process.env;
+const {
+    TELEGRAM_TOKEN = '1886946121:AAEehYw6n3xz1eSCljt3gkZzc3lb0Z3epbA',
+    TELEGRAM_CHAT_ID = -279746682
+} = process.env;
 
 export default async function({ body }: Request<any, any, ICallRequest>, res: Response) {
     try {

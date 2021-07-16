@@ -25,7 +25,10 @@ export default {
 		hot: true,
 		inline: true,
 		clientLogLevel: 'none',
-		disableHostCheck: true
+		disableHostCheck: true,
+		proxy: {
+			'/api': 'http://localhost:2101',
+		},
 	},
 	plugins: [
 		...config.plugins,

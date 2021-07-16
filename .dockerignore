@@ -5,5 +5,4 @@ Makefile
 .env
 .gitignore
 Dockerfile
-Dockerfile.prod
 .github
