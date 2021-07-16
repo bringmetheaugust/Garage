@@ -5,15 +5,8 @@ CONTAINER=garage
 
 build:
 	@echo "Building container..."
-	@docker build -t ${IMAGE} ./Dockerfile.prod
+	@docker build -t ${IMAGE} ./Dockerfile
 
 run:
 	@echo "Start running container..."
-	@docker run --name ${CONTAINER} \
-		# -v $(shell pwd)/docs:/usr/share/nginx/html/docs
-		-p 80:80 \
-		-d ${IMAGE}
-
-stop:
-	@echo "Stoping container..."
-	@docker stop ${CONTAINER}
+	@docker run --name ${CONTAINER} -p 83:80 -d ${IMAGE}

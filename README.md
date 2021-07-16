@@ -7,7 +7,7 @@ Web site about STO for cool guys.
 
 ## Join
 
- * **remote test**: https://garagehub.site
+https://garagehub.site
 
 ## Deploy
 

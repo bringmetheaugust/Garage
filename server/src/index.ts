@@ -4,6 +4,8 @@ import cookieParser from 'cookie-parser';
 import callmeController from './controllers/callme';
 import checkSpamMiddleware from './middleWare/checkSpam';
 
+const { SERVER_PORT } = process.env;
+
 const app = express();
 
 app.
@@ -21,7 +23,7 @@ app.
 app.post('/api/callme', checkSpamMiddleware, callmeController);
 
 try {
-    app.listen(2101);
+    app.listen(SERVER_PORT || 2101);
 } catch(err) {
     console.error(`ошибка старта. ${err}`);
 }
