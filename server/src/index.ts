@@ -24,7 +24,7 @@ app.use('/api', apiRouter);
 app.use('/', staticRouter);
 
 try {
-    app.listen('0.0.0.0' + SERVER_PORT);
+    app.listen(Number(SERVER_PORT));
     console.log(`server is running on ${SERVER_PORT} port`);
 } catch(err) {
     console.error(`start error: ${err}`);
