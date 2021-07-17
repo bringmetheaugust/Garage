@@ -15,10 +15,10 @@ RUN apt-get update && \
     apt-get install -y nodejs
 
 # server
-RUN npm run build --prefix ./server
+RUN npm i --prefix ./server && npm run build --prefix ./server
 
 # client
-RUN npm run build --prefix ./client && mv ./client/dist /var/www
+RUN npm i --prefix ./client && npm run build --prefix ./client && mv ./client/dist /var/www
 
 EXPOSE 80
 
