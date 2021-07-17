@@ -14,10 +14,12 @@ RUN apt-get update && \
     apt-get install -y curl && curl -fsSL https://deb.nodesource.com/setup_14.x | bash - && \
     apt-get install -y nodejs
 
+# server
+RUN npm run build --prefix ./server
+
 # client
-RUN npm run build --prefix ./client
-RUN mv ./client/dist /var/www
+RUN npm run build --prefix ./client && mv ./client/dist /var/www
 
 EXPOSE 80
 
-CMD service nginx start && npm run prod --prefix ./server/
+CMD service nginx start && npm run prod --prefix ./server
