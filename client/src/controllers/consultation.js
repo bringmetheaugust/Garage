@@ -40,8 +40,8 @@ async function sendForm(e) {
         const { error } = Notification.alertTypes;
 
         switch(message) {
-            case 400: return new Notification(error, formNotifications.invalidData);
-            case 403: return new Notification(error, formNotifications.spam);
+            case '400': return new Notification(error, formNotifications.invalidData);
+            case '403': return new Notification(error, formNotifications.spam);
             default: new Notification(error, formNotifications.unknownError);
         }
     } finally {
