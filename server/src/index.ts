@@ -4,7 +4,7 @@ import cookieParser from 'cookie-parser';
 import apiRouter from './routers/apiRouter';
 import staticRouter from './routers/staticRouter';
 
-const { SERVER_PORT } = process.env;
+const { SERVER_PORT = 2101 } = process.env;
 
 const app = express();
 
@@ -24,7 +24,8 @@ app.use('/api', apiRouter);
 app.use('/', staticRouter);
 
 try {
-    app.listen(SERVER_PORT || 2101);
+    app.listen('0.0.0.0' + SERVER_PORT);
+    console.log(`server is running on ${SERVER_PORT} port`);
 } catch(err) {
     console.error(`start error: ${err}`);
 }

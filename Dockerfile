@@ -7,11 +7,11 @@ WORKDIR /app
 COPY . .
 
 # server
-RUN npm i --only=prod --prefix ./server && \
+RUN npm i --prefix ./server && \
     npm run build --prefix ./server
 
 # client
-RUN npm i --only=prod --prefix ./client && \
+RUN npm i --prefix ./client && \
     npm run build --prefix ./client
 
 EXPOSE 80
