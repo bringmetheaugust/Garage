@@ -13,8 +13,8 @@ https://garagehub.site
 
  * ### localy
 
-    * `cd client && yarn dev` to run client on http://localhost:2100
-    * `cd server && yarn dev` to run server on http://localhost:2101
+    * `yarn dev --cwd ./client` to run client dev server on http://localhost:2100
+    * `yarn dev --cwd ./server` to run API dev server on http://localhost:2101
 
     ###### Required global packages:
 
@@ -23,12 +23,10 @@ https://garagehub.site
 
  * ### remote production
 
-    * push changes to `production` branch and watch [actions](https://github.com/FedorenkaAvenue/Garage/actions) result
+    * push changes to `production` branch and watch [actions](https://github.com/bringmetheaugust/Garage/actions) result
 
 ## Docs
-
- * [Client side](./client).    
- * [Server side](./server).    
+   
  * [Server REST Api docs](https://docs.fedorenka.online/?urls.primaryName=Garage).    
  * <details>
     <summary><i>Telegram</i> bot</summary>

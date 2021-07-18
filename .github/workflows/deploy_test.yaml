@@ -1,4 +1,4 @@
-name: Deploy remote test project
+name: Deploy remote production project
 
 on:
   push:
@@ -8,7 +8,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Fetch test branch
+      - name: Fetch production branch
         uses: appleboy/ssh-action@v0.1.2
         with:
           host: ${{ secrets.TEST_SERVER_HOST }}
@@ -17,7 +17,7 @@ jobs:
           script: |
             cd /Garage
             git reset --hard HEAD
-            git pull origin test
+            git pull origin production
       - name: Rebuild && up containers
         uses: appleboy/ssh-action@v0.1.2
         with:
@@ -26,6 +26,6 @@ jobs:
           password: ${{ secrets.TEST_SERVER_SSH_KEY }}
           script: |
             cd /Garage
-            make stop
-            make build_prod
-            make run_prod
+            make remove
+            make build
+            make run

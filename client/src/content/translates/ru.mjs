@@ -120,6 +120,6 @@ export default {
     },
     notFound: {
         title: 'Страницу не найдено',
-        backLink: 'вернутся на главную'
+        backLink: 'вернуться на главную'
     }
 }
